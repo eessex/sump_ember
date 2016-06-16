@@ -4,6 +4,7 @@ import EmbeddedRecordsMixin from 'ember-data/serializers/embedded-records-mixin'
 
 export default JSONAPISerializer.extend(EmbeddedRecordsMixin, {
   attrs: {
-    presenter: { embedded: 'always' }
+    presenter: { embedded: 'always' },
+    artists: { embedded: 'always' }
   }
 });
