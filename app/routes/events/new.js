@@ -7,9 +7,9 @@ export default Ember.Route.extend({
   actions: {
     save() {
       let event = this.modelFor(this.routeName);
-      event.save().then(()=>{
+      event.save().then((response)=>{
         this.transitionTo('events.event', event);
-      });
+      }).catch(reason);
     }
   }
 });

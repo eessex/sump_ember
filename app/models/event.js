@@ -8,7 +8,7 @@ export default Model.extend({
   price: attr('string'),
   description: attr('string'),
   image: attr('string'),
-  presenter_id: attr('string'),
+  presenterId: attr('string'),
   presenter: belongsTo('presenter'),
   artists: hasMany('artist')
 });
