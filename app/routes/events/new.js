@@ -2,9 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.createRecord('event');
-    // need to also build the associated records
-    // this.get('model.artists').createRecord()
+    return Ember.RSVP.hash({
+      event: this.store.createRecord('event'),
+      artists: this.store.findAll('artist'),
+      presenters: this.store.findAll('presenter')
+    })
   },
   actions: {
     save() {
@@ -12,6 +14,6 @@ export default Ember.Route.extend({
       event.save().then((response)=>{
         this.transitionTo('events.event', event);
       }).catch(reason);
-    }
+    },
   }
 });

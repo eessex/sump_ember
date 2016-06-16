@@ -1,0 +1,28 @@
+header h1#logo {
+  display: inline-block;
+  margin: 0;
+}
+
+header nav {
+  float: right;
+}
+
+
+form div {
+  position: relative;
+}
+form .results {
+  display: none;
+  position: absolute;
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none;
+  background-color: #eee;
+  z-index: 100;
+  border: 1px solid;
+  min-width: 10em;
+}
+
+form .results.active {
+  display: block;
+}

@@ -1,0 +1,10 @@
+{{input value=query action="showMatches" on="key-press" id="artists"}}
+
+<ul class='results'>
+{{#each results as |artist|}}
+  <li class='artist'>
+  {{artist.name}}
+  </li>
+{{/each}}
+</ul>
+

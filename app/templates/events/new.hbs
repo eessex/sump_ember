@@ -9,6 +9,7 @@
   <div>
     <label for="presenter">Presenter</label>
     {{input value=model.presenterId id="id"}}
+    {{all-presenters presenters=model.presenters}}
   </div>
 
   <div>
@@ -21,9 +22,10 @@
     {{input value=model.price id="price"}}
   </div>
 
-  <div>
+  <div class="artists">
     <label for="artist">Artists</label>
     {{input value=model.artists id="artist"}}
+    {{all-artists artists=model.artists}}
   </div>
 
   <div>
