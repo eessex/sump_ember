@@ -3,32 +3,32 @@
 <form>
   <div>
     <label for="name">Title</label>
-    {{input value=event.name id="name"}}
+    {{input value=model.name id="name"}}
   </div>
 
   <div>
     <label for="presenter">Presenter</label>
-    {{input value=event.presenterId id="id"}}
+    {{input value=model.presenterId id="id"}}
   </div>
 
   <div>
     <label for="date">Date</label>
-    {{input value=event.date id="date"}}
+    {{input value=model.date id="date"}}
   </div>
 
   <div>
     <label for="price">Price</label>
-    {{input value=event.price id="price"}}
+    {{input value=model.price id="price"}}
   </div>
 
   <div>
     <label for="artist">Artists</label>
-    {{input value=event.artists id="artist"}}
+    {{input value=model.artists id="artist"}}
   </div>
 
   <div>
     <label for="description">Description</label>
-    {{textarea value=event.description id="description"}}
+    {{textarea value=model.description id="description"}}
   </div>
 
   <button {{action 'save'}} id="submit" class="btn">Save</button>
