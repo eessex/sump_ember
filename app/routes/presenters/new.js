@@ -8,8 +8,8 @@ export default Ember.Route.extend({
     save() {
       let presenter = this.modelFor(this.routeName);
       presenter.save().then((response) => {
-        this.transitionTo('presenters.presenter', presenter)
-      }).catch(reason)
+        this.transitionTo('presenters.presenter', presenter);
+      }).catch(reason);
     }
   }
 });

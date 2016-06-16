@@ -8,8 +8,8 @@ export default Ember.Route.extend({
     save() {
       let event = this.modelFor(this.routeName);
       event.save().then(()=>{
-        this.transitionTo('events.event', event)
-      })
+        this.transitionTo('events.event', event);
+      });
     }
   }
 });
