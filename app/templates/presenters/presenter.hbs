@@ -1,0 +1,9 @@
+{{outlet}}
+{{model.name}}
+Description: {{model.description}}<br>
+url: {{model.url}}<br>
+image: {{model.image}}<br>
+events:<br>
+{{#each model.events as |event|}}
+  {{event.title}}<br>
+{{/each}}

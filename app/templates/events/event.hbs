@@ -1,0 +1,11 @@
+{{outlet}}
+{{model.title}}
+Date: {{model.date}}<br>
+Price: {{model.price}}<br>
+Desc: {{model.description}}<br>
+Image: {{model.image}}<br>
+Presenter: {{model.presenter.name}}<br>
+Artists:<br>
+{{#each model.artists as |artist|}}
+  {{artist.name}}<br>
+{{/each}}

@@ -1,0 +1,9 @@
+{{outlet}}
+<h1>artists</h1>
+<ul>
+  {{#each model as |artist|}}
+    <li>
+      <h2>{{link-to artist.name "artists.artist" artist}}</h2>
+    </li>
+  {{/each}}
+</ul>

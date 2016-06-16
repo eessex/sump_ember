@@ -1,0 +1,18 @@
+{{outlet}}
+<h1>events</h1>
+<ul>
+  {{#each model as |event|}}
+    <li>
+      <h2>{{link-to event.title 'events.event' event}}</h2>
+      Date: {{event.date}}<br>
+      Price: {{event.price}}<br>
+      Desc: {{event.description}}<br>
+      Image: {{event.image}}<br>
+      Presenter: {{event.presenter.name}}<br>
+      Artists:<br>
+      {{#each event.artists as |artist|}}
+        {{artist.name}}<br>
+      {{/each}}
+    </li>
+  {{/each}}
+</ul>

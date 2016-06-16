@@ -1,0 +1,16 @@
+{{outlet}}
+<h1>presenters</h1>
+<ul>
+  {{#each model as |presenter|}}
+    <li>
+      <h2>{{link-to presenter.name 'presenters.presenter' presenter}}</h2>
+      Description: {{presenter.description}}<br>
+      url: {{presenter.url}}<br>
+      image: {{presenter.image}}<br>
+      events:<br>
+      {{#each presenter.events as |event|}}
+        {{event.title}}<br>
+      {{/each}}
+    </li>
+  {{/each}}
+</ul>
