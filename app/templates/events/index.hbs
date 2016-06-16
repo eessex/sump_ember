@@ -3,7 +3,7 @@
 <ul>
   {{#each model as |event|}}
     <li>
-      <h2>{{link-to event.title 'events.event' event}}</h2>
+      <h2>{{link-to event.name 'events.event' event}}</h2>
       Date: {{event.date}}<br>
       Price: {{event.price}}<br>
       Desc: {{event.description}}<br>
