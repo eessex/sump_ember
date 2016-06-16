@@ -1,0 +1,35 @@
+<h1>New Event</h1>
+
+<form>
+  <div>
+    <label for="title">Title</label>
+    {{input value=event.title id="title"}}
+  </div>
+  
+  <div>
+    <label for="presenter">Presenter</label>  
+    {{input value=event.presenter id="presenter"}}
+  </div>
+  
+  <div>
+    <label for="date">Date</label>  
+    {{input value=event.date id="date"}}
+  </div>
+  
+  <div>
+    <label for="price">Price</label>  
+    {{input value=event.price id="price"}}
+  </div>
+
+  <div>
+    <label for="artist">Artists</label>  
+    {{input value=event.artists id="artist"}}
+  </div>
+
+  <div>
+    <label for="description">Description</label>   
+    {{textarea value=event.description id="description"}}
+  </div> 
+  
+  <button {{action 'save'}} id="submit" class="btn">Save</button>
+</form>
