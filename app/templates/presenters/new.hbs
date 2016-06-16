@@ -1,0 +1,24 @@
+{{outlet}}
+<form>
+  <div>
+    <label for='name'>Name</label>
+    {{input value=model.name id='name'}}
+  </div>
+
+  <div>
+    <label for='description'>Description</label>
+    {{input value=model.description id='description'}}
+  </div>
+
+  <div>
+    <label for='url'>URL</label>
+    {{input value=model.url id='url'}}
+  </div>
+
+  <div>
+    <label for='image'>Image</label>
+    {{input value=model.image id='image'}}
+  </div>
+
+  <input type='submit' value='submit' {{action 'save'}}>
+</form>

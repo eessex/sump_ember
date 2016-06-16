@@ -14,6 +14,7 @@ Router.map(function() {
   });
   this.route('presenters', function() {
     this.route('presenter', { path: '/:presenter_id'});
+    this.route('new');
   });
 });
 
