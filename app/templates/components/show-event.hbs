@@ -7,7 +7,7 @@
 
   <div>
     <label for="date">Date</label>
-    {{input value=event.date id="date"}}
+    {{input type="datetime-local" value=event.date id="date"}}
   </div>
 
   <div>
@@ -15,13 +15,18 @@
     {{input value=event.price id="price"}}
   </div>
 
-  <!-- has many artists -->
-  {{#each event.artists as |artist|}}
-  <div>
+  {{!-- <div>
     <label for="artist">Artists</label>
-    {{input value=artist.name id="artist"}}
+    {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
   </div>
-  {{/each}}
+
+  <div class="selectedArtists">
+    {{#each event.artists as |artist|}}
+      <div class="">
+        {{artist.name}}
+      </div>
+    {{/each}}
+  </div> --}}
 
   <div>
     <label for="description">Description</label>
@@ -33,7 +38,7 @@
     {{input value=presenter.name id="presenter"}}
   </div>
 
-  <button {{action 'save'}} id="submit" class="btn">Save</button>
+  <button {{action 'update'}} id="submit" class="btn">Update</button>
 </form>
 {{else}}
 Name: {{event.name}}<br>
