@@ -5,6 +5,9 @@ export default Ember.Route.extend({
     return this.store.peekRecord('presenter', params.presenter_id);
   },
   actions: {
+    edit() {
+
+    },
     delete() {
       let presenter = this.currentModel;
       presenter.deleteRecord();

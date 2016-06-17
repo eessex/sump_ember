@@ -1,0 +1,35 @@
+{{#if presenter.isEditing}}
+<form>
+  <div>
+    <label for='name'>Name</label>
+    {{input value=presenter.name id='name'}}
+  </div>
+
+  <div>
+    <label for='description'>Description</label>
+    {{input value=presenter.description id='description'}}
+  </div>
+
+  <div>
+    <label for='url'>URL</label>
+    {{input value=presenter.url id='url'}}
+  </div>
+
+  <div>
+    <label for='image'>Image</label>
+    {{input value=presenter.image id='image'}}
+  </div>
+
+  <input type='submit' value='submit' {{action 'update'}}>
+</form>
+{{else}}
+{{presenter.name}}
+Description: {{presenter.description}}<br>
+url: {{presenter.url}}<br>
+image: {{presenter.image}}<br>
+events:<br>
+{{#each presenter.events as |event|}}
+  {{event.name}}<br>
+{{/each}}
+
+{{/if}}

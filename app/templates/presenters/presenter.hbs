@@ -7,4 +7,8 @@ events:<br>
 {{#each model.events as |event|}}
   {{event.name}}<br>
 {{/each}}
+
+<button id='edit' {{action 'edit'}}>Edit</button>
 <button id='delete' {{action 'delete'}}>Delete</button>
+
+{{show-presenter presenter=model}}

@@ -1,0 +1,49 @@
+{{#if event.isEditing}}
+<form>
+  <div>
+    <label for="name">Title</label>
+    {{input value=event.name id="name"}}
+  </div>
+
+  <div>
+    <label for="date">Date</label>
+    {{input value=event.date id="date"}}
+  </div>
+
+  <div>
+    <label for="price">Price</label>
+    {{input value=event.price id="price"}}
+  </div>
+
+  <!-- has many artists -->
+  {{#each event.artists as |artist|}}
+  <div>
+    <label for="artist">Artists</label>
+    {{input value=artist.name id="artist"}}
+  </div>
+  {{/each}}
+
+  <div>
+    <label for="description">Description</label>
+    {{textarea value=event.description id="description"}}
+  </div>
+
+  <div>
+    <label for="presenter">Presenter</label>
+    {{input value=presenter.name id="presenter"}}
+  </div>
+
+  <button {{action 'save'}} id="submit" class="btn">Save</button>
+</form>
+{{else}}
+Name: {{event.name}}<br>
+Date: {{event.date}}<br>
+Price: {{event.price}}<br>
+Desc: {{event.description}}<br>
+Image: {{event.image}}<br>
+Presenter: {{event.presenter.name}}<br>
+Artists:<br>
+{{#each event.artists as |artist|}}
+  {{artist.name}}<br>
+{{/each}}
+{{/if}}
