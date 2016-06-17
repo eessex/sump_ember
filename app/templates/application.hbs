@@ -1,5 +1,11 @@
-<h2 id="title">Sump</h2>
-{{link-to 'Artists' 'artists'}}
-{{link-to 'Presenters' 'presenters'}}
-{{link-to 'Events' 'events'}}
-{{outlet}}
+<header>
+  <h1 id="logo">{{link-to 'the Sump' 'index'}}</h1>
+  <nav id="main">
+    {{link-to 'Artists' 'artists'}}
+    {{link-to 'Presenters' 'presenters'}}
+    {{link-to 'Events' 'events'}}
+  </nav>
+</header>
+<main>
+  {{outlet}}
+</main>
