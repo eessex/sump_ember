@@ -1,9 +1,9 @@
-{{input value=query action="showMatches" on="key-press" id="presenter"}}
+{{input value=query id="presenters"}}
 
 <ul class='results'>
 {{#each results as |presenter|}}
   <li class='presenter'>
-    {{presenter.name}}
+  <span {{action "addPresenter" presenter}}>{{presenter.name}}</span>
   </li>
 {{/each}}
 </ul>

@@ -17,9 +17,13 @@ export default Ember.Controller.extend({
     handleAddArtist(artist){
       this.get('model.artists').pushObject(artist)
     },
+    handleAddPresenter(selection){
+     let selectionId = selection.get('id')
+     this.get('model').set('presenter', selection)
+    },
     save() {
       this.get('presenter').save().then((presenter) => {
-        this.get('model').set('presenter', presenter)
+      this.get('model').set('presenter', presenter)
         this.get('model').save().then((event) => {
           //need to make conditional here for new or existing
           this.get('artists').map((artist) => {

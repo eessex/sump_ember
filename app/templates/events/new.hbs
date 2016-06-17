@@ -18,14 +18,13 @@
   <div>
     <label for="artist">Artists</label>
     {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
-  </div>
-
-  <div class="selectedArtists">
-    {{#each model.artists as |artist|}}
-      <div class="">
-        {{artist.name}}
-      </div>
-    {{/each}}
+    <div class="selectedArtists">
+      {{#each model.artists as |artist|}}
+        <div class="">
+          {{artist.name}}
+        </div>
+      {{/each}}
+    </div>
   </div>
 
   <div>
@@ -36,7 +35,13 @@
   <!-- belongs to presenter -->
   <div>
     <label for="presenter">Presenter</label>
-    {{input value=presenter.name id="presenter"}}
+    {{all-presenters presenters=allPresenters onPresenterAdd=(action "handleAddPresenter")}}
+
+    <div class="selectedPresenter">
+        <div class="">
+          {{model.presenter.name}}
+        </div> 
+    </div>
   </div>
 
   <button {{action 'save'}} id="submit" class="btn">Save</button>

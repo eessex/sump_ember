@@ -1,20 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  query: "",
+  // query: "",
   results: Ember.computed('query', function(){
-    if(this.get('query') === ''){
-      return this.get('artists')
-    }
-
-    return this.get('artists').filter((artist) =>{
-        let query = this.get('query')
-        return artist.get('name').toLowerCase().includes(query)
+    return this.get('artists').filter((selection) =>{
+        let query = this.get('query').toLowerCase()
+        return selection.get('name').toLowerCase().includes(query)
       })
   }),
   actions: {
-    addArtist(artist){
-      this.attrs.onArtistAdd(artist)
+    addArtist(selection){
+      this.attrs.onArtistAdd(selection)
     },
     // showMatches: function(){
     //   let _that = this;
