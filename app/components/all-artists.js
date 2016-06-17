@@ -14,7 +14,8 @@ export default Ember.Component.extend({
   }),
   actions: {
     addArtist(artist){
-      this.get('event.artists').pushObject(artist)
+      this.attrs.onArtistAdd(artist)
+      //  this.get('event.artists').pushObject(artist)
     },
     // showMatches: function(){
     //   let _that = this;

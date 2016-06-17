@@ -15,13 +15,18 @@
     {{input value=model.price id="price"}}
   </div>
 
-  <!-- has many artists -->
-  {{#each artists as |artist|}}
   <div>
     <label for="artist">Artists</label>
-    {{input value=artist.name id="artist"}}
+    {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
   </div>
-  {{/each}}
+
+  <div class="selectedArtists">
+    {{#each model.artists as |artist|}}
+      <div class="">
+        {{artist.name}}
+      </div>
+    {{/each}}
+  </div>
 
   <div>
     <label for="description">Description</label>

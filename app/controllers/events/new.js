@@ -7,7 +7,16 @@ export default Ember.Controller.extend({
   presenter: Ember.computed(function(){
     return this.store.createRecord('presenter')
   }),
+  allArtists: Ember.computed(function() {
+    return this.store.findAll('artist');
+  }),
+  allPresenters: Ember.computed(function() {
+    return this.store.findAll('presenter');
+  }),
   actions: {
+    handleAddArtist(artist){
+      this.get('model.artists').pushObject(artist)
+    },
     save() {
       this.get('presenter').save().then((presenter) => {
         this.get('model').set('presenter', presenter)
