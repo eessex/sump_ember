@@ -2,9 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   query: "",
-  // didInsertElement(){
-  //   insert any jquery funtions with this.$('.artist')
-  // },
   results: Ember.computed('query', function(){
     if(this.get('query') === ''){
       return this.get('artists')
@@ -12,8 +9,7 @@ export default Ember.Component.extend({
 
     return this.get('artists').filter((artist) =>{
         let query = this.get('query')
-        console.log(artist.get('name').includes(query))
-        return artist.get('name').includes(query)
+        return artist.get('name').toLowerCase().includes(query)
       })
   }),
   actions: {
@@ -25,12 +21,5 @@ export default Ember.Component.extend({
         $(this).parent().removeClass('active');
       })
     }
-  //   filterArtists(query){
-  //     let result = this.get('artists').filter((artist) =>{
-  //       console.log(artist.get('name').includes(query))
-  //       return artist.get('name').includes(query)
-  //     })
-  //     this.set('artists', result)
-  //   }
   }
 });

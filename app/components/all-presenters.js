@@ -8,8 +8,7 @@ export default Ember.Component.extend({
     }
     return this.get('presenters').filter((presenter) =>{
       let query = this.get('query')
-      console.log(presenter.get('name').includes(query))
-      return presenter.get('name').includes(query)
+      return presenter.get('name').toLowerCase().includes(query)
     })
   }),
     actions: {
