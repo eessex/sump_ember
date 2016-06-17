@@ -4,7 +4,7 @@ import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   name: attr('string'),
-  date: attr('date'),
+  date: attr(),
   price: attr('string'),
   description: attr('string'),
   image: attr('string'),
