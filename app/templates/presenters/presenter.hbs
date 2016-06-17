@@ -1,12 +1,4 @@
 {{outlet}}
-{{model.name}}
-Description: {{model.description}}<br>
-url: {{model.url}}<br>
-image: {{model.image}}<br>
-events:<br>
-{{#each model.events as |event|}}
-  {{event.name}}<br>
-{{/each}}
 
 <button id='edit' {{action 'edit'}}>Edit</button>
 <button id='delete' {{action 'delete'}}>Delete</button>
