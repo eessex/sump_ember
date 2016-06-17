@@ -7,9 +7,14 @@ header nav {
   float: right;
 }
 
+form {
+  max-width: 800px;
+  margin: 0 auto
+}
 
 form div {
   position: relative;
+  margin: 1em 0;
 }
 form .results {
   display: none;
