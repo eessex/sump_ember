@@ -1,0 +1,37 @@
+{{!-- {{#modal-dialog translucentOverlay=true}} --}}
+<div class="close">
+  <button {{action "closeModal"}} type="button" class="close-button">X</button>
+</div>
+<div class="add-image">
+  <div class="field">
+    <span>Title:</span> {{input value=title}}
+  </div>
+
+  <div class="field">
+    <span>Description:</span> {{input value=description}}
+  </div>
+
+  {{#pl-uploader for="upload-image" extensions="jpg jpeg png gif" onInitOfUploader="onInitOfUploader" onfileadd="addImage" as |queue dropzone|}}
+    <div class="dropzone" id={{dropzone.id}}>
+      {{#if dropzone.active}}
+        {{#if dropzone.valid}}
+          Drop to upload
+        {{else}}
+          Invalid
+        {{/if}}
+      {{else if queue.length}}
+        Uploading {{queue.length}} files. ({{queue.progress}}%)
+      {{else}}
+        <h4>Upload Images</h4>
+        <p>
+          {{#if dropzone.enabled}}
+            Drag and drop images onto this area to upload them or
+          {{/if}}
+          <a id="upload-image">Add an Image.</a>
+        </p>
+      {{/if}}
+    </div>
+  {{/pl-uploader}}
+
+</div>
+{{!-- {{/modal-dialog}} --}}

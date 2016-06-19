@@ -9,5 +9,6 @@ export default Model.extend({
   description: attr('string'),
   image: attr('string'),
   presenter: belongsTo('presenter'),
-  artists: hasMany('artist')
+  artists: hasMany('artist'),
+  images: hasMany('image')
 });

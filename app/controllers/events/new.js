@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
             artist.save()
           })
         }).catch(reason);
-    })
+      })
     }
   }
 });
