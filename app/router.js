@@ -17,6 +17,7 @@ Router.map(function() {
     this.route('presenter', { path: '/:presenter_id'});
     this.route('new');
   });
+  this.route('login');
 });
 
 export default Router;
