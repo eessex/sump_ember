@@ -1,21 +1,28 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  query: "",
+  store: Ember.inject.service(),
   results: Ember.computed('query', function(){
-    if(this.get('query') === ''){
-      return this.get('artists')
-    }
-
-    return this.get('artists').filter((artist) =>{
-        let query = this.get('query')
-        return artist.get('name').toLowerCase().includes(query)
+    return this.get('artists').filter((selection) =>{
+        let query = this.get('query').toLowerCase()
+        return selection.get('name').toLowerCase().includes(query)
       })
   }),
   actions: {
-    addArtist(artist){
-      this.attrs.onArtistAdd(artist)
+    addArtist(selection){
+      this.attrs.onArtistAdd(selection);
+      this.$('input').val('');
     },
+    addNewArtist(){
+      let store = this.get('store');
+      //get name of artist
+      let newArtistName = this.$('input').val()
+      //set name to empty object from new controler
+      let newArtistObject = store.createRecord('artist');
+      newArtistObject.set('name', newArtistName)
+      newArtistObject.save()
+      //push object into models artist array
+    }
     // showMatches: function(){
     //   let _that = this;
     //   this.$('.artist').parent().addClass('active');
