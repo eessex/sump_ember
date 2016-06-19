@@ -1,9 +1,11 @@
 {{input value=query id="presenters"}}
 
+
+
 <ul class='results'>
 {{#each results as |presenter|}}
-  <li class='presenter'>
-  <span {{action "addPresenter" presenter}}>{{presenter.name}}</span>
+  <li class='presenter' {{action "addPresenter" presenter}}>
+  <span>{{presenter.name}}</span>
   </li>
 {{/each}}
 </ul>

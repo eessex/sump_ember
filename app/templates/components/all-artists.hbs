@@ -1,5 +1,8 @@
 {{input value=query id="artists"}}
 
+<button type="button" name="button" {{action "addNewArtist"}}>Add New Artist</button>
+
+
 <ul class='results'>
 {{#each results as |artist|}}
   <li class='artist'>
