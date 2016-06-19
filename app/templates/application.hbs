@@ -3,7 +3,8 @@
   <nav id="main">
     {{link-to 'Artists' 'artists'}}
     {{link-to 'Presenters' 'presenters'}}
-    {{link-to 'Events' 'events'}}
+    {{link-to 'Events' 'events'}} |
+    <li>< a href="#" {{action 'invalidateSession'}}>Logout</a></li>
   </nav>
 </header>
 <main>
