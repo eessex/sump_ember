@@ -14,7 +14,10 @@
       </div>
       {{#if event.showDetails}}
         <div class="content">
-        <p>insert the event info here</p>
+          {{event.description}}
+          {{event.date}}
+          {{event.url}}
+          {{event.presenter.name}}
           {{outlet}}
         </div>
       {{/if}}

@@ -9,6 +9,7 @@ export default Model.extend({
   description: attr('string'),
   image: attr('string'),
   url: attr('string'),
+  upcoming: attr('boolean'),
   presenter: belongsTo('presenter'),
   artists: hasMany('artist')
 });

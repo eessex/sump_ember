@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
 
   actions: {
     edit() {
-      let event = this.get('model') 
+      let event = this.get('model')
       event.toggleProperty('isEditing');
       console.log(event.isEditing)
     },
