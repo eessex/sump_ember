@@ -54,7 +54,7 @@
 
   <div class="event show vert">
     <div class="image">
-      {{event.image}}
+      <img src={{event.image}} >
     </div>
     <div class="description">
     <header>
@@ -64,7 +64,7 @@
         </h3>
       {{/if}}
       <h1 class="title">{{event.name}}</h1>
-      <h4 class="date">{{event.date}}
+      <h4 class="date">{{date}}
       <span class="price"> -
       {{#if event.price}}
         {{event.price}}
@@ -92,6 +92,7 @@
     {{/each}}
     </ul>
     </div>
+
 
   </div>
   {{/if}}

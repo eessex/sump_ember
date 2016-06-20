@@ -6,9 +6,11 @@ export default Ember.Controller.extend({
   //   return model
   // }),
   // sortBy: "name",
-  betterDate() {
-    return moment('Dec 25, 1995');
-  },
+  betterDate: Ember.computed(function() {
+    var day = moment("1995-12-25");
+    console.log(day)
+    return moment("1995-12-25");
+  }),
   actions: {
     sortByName() {
       var sorted = this.get('model').sortBy('name');
