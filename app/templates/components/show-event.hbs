@@ -64,7 +64,7 @@
         </h3>
       {{/if}}
       <h1 class="title">{{event.name}}</h1>
-      <h4 class="date">{{date}}
+      <h4 class="date">{{formatDate date=event.date}}
       <span class="price"> -
       {{#if event.price}}
         {{event.price}}

@@ -15,7 +15,7 @@
       {{#if event.showDetails}}
         <div class="content">
           {{event.description}}
-          {{event.date}}
+          {{formatDate date=event.date}}
           {{event.url}}
           {{event.presenter.name}}
           {{link-to 'deets' 'events.event' event}}
