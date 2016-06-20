@@ -8,6 +8,9 @@ export default Ember.Controller.extend({
     return this.store.findAll('presenter');
   }),
   actions: {
+    imageUploadComplete: function(details) {
+      this.get('model').set('image', details["fullUrl"])
+    },
     handleAddArtist(artist){
       this.get('model.artists').pushObject(artist)
     },
