@@ -1,2 +1,6 @@
-{{outlet}}
-{{model.name}}
+<div class="artist show">
+<h1 class="title">{{model.name}}</h1>
+{{#each model.events as |event|}}
+  {{event.name}}
+{{/each}}
+</div>
