@@ -2,15 +2,6 @@ import Ember from 'ember';
 import moment from 'moment';
 
 export default Ember.Controller.extend({
-  // results: Ember.computed('sortBy', function(){
-  //   return model
-  // }),
-  // sortBy: "name",
-  betterDate: Ember.computed(function() {
-    var day = moment("1995-12-25");
-    console.log(day)
-    return moment("1995-12-25");
-  }),
   actions: {
     sortByName() {
       var sorted = this.get('model').sortBy('name');
