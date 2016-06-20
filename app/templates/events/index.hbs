@@ -2,10 +2,8 @@
 <h1>Events</h1>
 <ul>
   {{#each model as |event|}}
-    <li>
-      <div class="reveal header">
-      {{#link-to "events.event" event}}
-      {{event.date}}
+    <li class="reveal" {{action 'viewMore' event}}>
+    <div class="header">
         {{#if event.presenter}}
           <span class="presenter">
             {{event.presenter.name}} Presents: 
@@ -14,11 +12,13 @@
         <span class="presenter">
           {{event.name}}
         </span>
-        {{/link-to}}
       </div>
-      <div class="reveal content">
-        {{outlet}}
-      </div>
+      {{#if event.showDetails}}
+        <div class="content">
+        <p>insert the event info here</p>
+          {{outlet}}
+        </div>
+      {{/if}}
     </li>
   {{/each}}
 </ul>
