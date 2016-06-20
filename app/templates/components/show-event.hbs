@@ -41,14 +41,45 @@
   <button {{action 'update'}} id="submit" class="btn">Update</button>
 </form>
 {{else}}
-Name: {{event.name}}<br>
-Date: {{event.date}}<br>
-Price: {{event.price}}<br>
-Desc: {{event.description}}<br>
-Image: {{event.image}}<br>
-Presenter: {{event.presenter.name}}<br>
-Artists:<br>
-{{#each event.artists as |artist|}}
-  {{artist.name}}<br>
-{{/each}}
+
+<div class="event show vert">
+  <div class="image">
+    {{event.image}}
+  </div>
+  <div class="description">
+  <header>
+    {{#if event.presenter}}
+      <h3 class="date">
+        {{event.presenter.name}} Presents:
+      </h3>
+    {{/if}}
+    <h1 class="title">{{event.name}}</h1>
+    <h4 class="date">{{event.date}}
+    <span class="price"> - 
+    {{#if event.price}}
+      {{event.price}}
+    {{else}}
+      Free
+    {{/if}}
+    </span>
+    </h4>
+  </header>
+    {{event.description}}
+  </div>
+
+  <div class="meta">
+  <ul class="artists">
+  <h4 class="header">{{link-to "Artists" "artists"}}</h4>
+  {{#each event.artists as |artist|}}
+    <li>
+      {{#link-to "artists.artist" artist}}
+        {{artist.name}} 
+        <small>({{artist.events.length}})</small>
+      {{/link-to}}
+    </li>
+  {{/each}}
+  </ul>
+  </div>
+
+</div>
 {{/if}}

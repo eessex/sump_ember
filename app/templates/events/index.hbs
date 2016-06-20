@@ -3,16 +3,22 @@
 <ul>
   {{#each model as |event|}}
     <li>
-      <h2>{{link-to event.name 'events.event' event}}</h2>
-      Date: {{event.date}}<br>
-      Price: {{event.price}}<br>
-      Desc: {{event.description}}<br>
-      Image: {{event.image}}<br>
-      Presenter: {{event.presenter.name}}<br>
-      Artists:<br>
-      {{#each event.artists as |artist|}}
-        {{artist.name}}<br>
-      {{/each}}
+      <div class="reveal header">
+      {{#link-to "events.event" event}}
+      {{event.date}}
+        {{#if event.presenter}}
+          <span class="presenter">
+            {{event.presenter.name}} Presents: 
+          </span>
+        {{/if}} 
+        <span class="presenter">
+          {{event.name}}
+        </span>
+        {{/link-to}}
+      </div>
+      <div class="reveal content">
+        {{outlet}}
+      </div>
     </li>
   {{/each}}
 </ul>

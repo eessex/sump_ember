@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       this.get('model').save().then((event) => {
         this.get('artists').map((artist) => {
           artist.get('events').pushObject(event)
-          artist.save()
+          artist.save();
         })
       }).catch(reason);
     }

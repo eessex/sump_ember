@@ -3,14 +3,11 @@
   <nav id="main">
     {{link-to 'Artists' 'artists'}}
     {{link-to 'Presenters' 'presenters'}}
-    {{link-to 'Events' 'events'}} |
+    {{link-to 'Events' 'events'}}
 
     {{#if session.isAuthenticated}}
-    <li>< a href="#" {{action 'invalidateSession'}}>Logout</a></li>
-    {{else}}
-    <li><a href="/login">Login</a></li>
+    <a href="#" {{action 'invalidateSession'}}>Logout</a>
     {{/if}}
-
   </nav>
 </header>
 <main>

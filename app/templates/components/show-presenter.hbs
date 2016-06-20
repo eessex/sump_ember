@@ -32,4 +32,23 @@ events:<br>
   {{event.name}}<br>
 {{/each}}
 
+<div class="presenter show vert">
+  <div class="image">
+    {{presenter.image}}
+  </div>
+  <div class="description">
+  <header>
+      <h1 class="title">
+        {{event.presenter.name}}
+      </h1>
+      <h4 class="link">{{presenter.url}}</h4>
+  </header>
+    {{presenter.description}}
+  </div>
+  {{#each presenter.events as |event|}}
+    {{event.name}}<br>
+  {{/each}}
+  </div>
+
+
 {{/if}}
