@@ -1,24 +1,10 @@
 {{outlet}}
 <h1>Events</h1>
-<ul>
-  {{#each model as |event|}}
-    <li class="reveal" {{action 'viewMore' event}}>
-    <div class="header">
-        {{#if event.presenter}}
-          <span class="presenter">
-            {{event.presenter.name}} Presents: 
-          </span>
-        {{/if}} 
-        <span class="presenter">
-          {{event.name}}
-        </span>
-      </div>
-      {{#if event.showDetails}}
-        <div class="content">
-        <p>insert the event info here</p>
-          {{outlet}}
-        </div>
-      {{/if}}
-    </li>
-  {{/each}}
-</ul>
+
+<div class="">
+  <button type="button" {{action "sortByName"}}>Name</button>
+  <button type="button" {{action "sortByDate"}}>Date</button>
+  <button type="button" {{action "sortByPresenter"}}>Presenter</button>
+</div>
+
+{{list-events model=model}}
