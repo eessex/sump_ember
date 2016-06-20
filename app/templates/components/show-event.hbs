@@ -1,85 +1,97 @@
-{{#if event.isEditing}}
-<form>
-  <div>
-    <label for="name">Title</label>
-    {{input value=event.name id="name"}}
-  </div>
+  {{#if event.isEditing}}
+  <form>
+    <div>
+      <label for="name">Title</label>
+      {{input value=event.name id="name"}}
+    </div>
 
-  <div>
-    <label for="date">Date</label>
-    {{input type="datetime-local" value=event.date id="date"}}
-  </div>
+    <div>
+      <label for="date">Date</label>
+      {{input type="datetime-local" value=event.date id="date"}}
+    </div>
 
-  <div>
-    <label for="price">Price</label>
-    {{input value=event.price id="price"}}
-  </div>
+    <div>
+      <label for="price">Price</label>
+      {{input value=event.price id="price"}}
+    </div>
 
-  {{!-- <div>
-    <label for="artist">Artists</label>
-    {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
-  </div>
-
-  <div class="selectedArtists">
-    {{#each event.artists as |artist|}}
-      <div class="">
-        {{artist.name}}
+    <div>
+      <label for="artist">Artists</label>
+      {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
+      <div class="selectedArtists">
+        {{#each model.artists as |artist|}}
+          <div class="">
+            {{artist.name}}
+          </div>
+        {{/each}}
       </div>
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      {{textarea value=event.description id="description"}}
+    </div>
+
+    <div>
+      <label for="url">URL</label>
+      {{input value=event.url id="url"}}
+    </div>
+
+    <div>
+      <label for="presenter">Presenter</label>
+      {{all-presenters presenters=allPresenters onPresenterAdd=(action "handleAddPresenter")}}
+
+      <div class="selectedPresenter">
+          <div class="">
+            {{model.presenter.name}}
+          </div>
+      </div>
+    </div>
+
+    <button {{action 'update'}} id="submit" class="btn">Update</button>
+  </form>
+  {{else}}
+
+  <div class="event show vert">
+    <div class="image">
+      {{event.image}}
+    </div>
+    <div class="description">
+    <header>
+      {{#if event.presenter}}
+        <h3 class="date">
+          {{event.presenter.name}} Presents:
+        </h3>
+      {{/if}}
+      <h1 class="title">{{event.name}}</h1>
+      <h4 class="date">{{event.date}}
+      <span class="price"> -
+      {{#if event.price}}
+        {{event.price}}
+      {{else}}
+        Free
+      {{/if}}
+      </span>
+      </h4>
+
+    </header>
+      {{event.description}}
+      {{event.url}}
+    </div>
+
+    <div class="meta">
+    <ul class="artists">
+    <h4 class="header">{{link-to "Artists" "artists"}}</h4>
+    {{#each event.artists as |artist|}}
+      <li>
+        {{#link-to "artists.artist" artist}}
+          {{artist.name}}
+          <small>({{artist.events.length}})</small>
+        {{/link-to}}
+      </li>
     {{/each}}
-  </div> --}}
+    </ul>
+    </div>
 
-  <div>
-    <label for="description">Description</label>
-    {{textarea value=event.description id="description"}}
   </div>
-
-  <div>
-    <label for="presenter">Presenter</label>
-    {{input value=presenter.name id="presenter"}}
-  </div>
-
-  <button {{action 'update'}} id="submit" class="btn">Update</button>
-</form>
-{{else}}
-
-<div class="event show vert">
-  <div class="image">
-    {{event.image}}
-  </div>
-  <div class="description">
-  <header>
-    {{#if event.presenter}}
-      <h3 class="date">
-        {{event.presenter.name}} Presents:
-      </h3>
-    {{/if}}
-    <h1 class="title">{{event.name}}</h1>
-    <h4 class="date">{{event.date}}
-    <span class="price"> - 
-    {{#if event.price}}
-      {{event.price}}
-    {{else}}
-      Free
-    {{/if}}
-    </span>
-    </h4>
-  </header>
-    {{event.description}}
-  </div>
-
-  <div class="meta">
-  <ul class="artists">
-  <h4 class="header">{{link-to "Artists" "artists"}}</h4>
-  {{#each event.artists as |artist|}}
-    <li>
-      {{#link-to "artists.artist" artist}}
-        {{artist.name}} 
-        <small>({{artist.events.length}})</small>
-      {{/link-to}}
-    </li>
-  {{/each}}
-  </ul>
-  </div>
-
-</div>
-{{/if}}
+  {{/if}}

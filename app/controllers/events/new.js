@@ -20,6 +20,7 @@ export default Ember.Controller.extend({
         event.get('artists').map((artist) => {
           artist.get('events').pushObject(event)
           artist.save();
+          this.transitionToRoute('events.event', event);
         })
       }).catch(reason);
     }
