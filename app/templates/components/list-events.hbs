@@ -1,26 +1,22 @@
 {{yield}}
 <ul>
   {{#each model as |event|}}
-    <li class="reveal" {{action 'viewMore' event}}>
+    <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
     <div class="header">
+      <span class="date">
+          {{formatDate date=event.date}}
+        </span>
         {{#if event.presenter}}
-          {{!-- <span class="presenter">
+           <span class="presenter">
             {{event.presenter.name}} Presents:
-          </span> --}}
+          </span> 
         {{/if}}
-        <span class="presenter">
-          <h2>{{link-to event.name}}</h2>
+        <span class="title">
+          {{event.name}}
         </span>
       </div>
       {{#if event.showDetails}}
-        <div class="content">
-          {{event.description}}
-          {{event.date}}
-          {{event.url}}
-          {{event.presenter.name}}
-          {{link-to 'deets' 'events.event' event}}
-          {{outlet}}
-        </div>
+        {{show-event event=event}}
       {{/if}}
     </li>
   {{/each}}

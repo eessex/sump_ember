@@ -43,15 +43,42 @@ h1.title {
   font-style: italic;
   font-size: 2.75em;
 }
+
+li.reveal {
+  border-top: 1px solid;
+}
+li.reveal.last {
+  border-bottom: 1px solid;
+}
+li.reveal .header {
+  opacity: 1;
+  -webkit-transition: opacity 1s; 
+  transition: opacity 1s;
+}
+
+li.reveal.active .header {
+  opacity: 0;
+}
+
 .event.show {
   width: 100%;
 }
 .event.show.vert .image {
   width: 49.29%;
   display: inline-block;
-  height: 100vh;
+/*  height: 100vh;*/
+  text-align: center;
 }
+.event.show.vert .image img {  
+  max-width: 100%;
+  height: auto;
+  max-height: 90vh;
+  width: auto;
+  margin: 0 auto;
+}
+
 .event.show.vert .description {
   width: 49.29%;
   display: inline-block;
+  vertical-align: top;
 }

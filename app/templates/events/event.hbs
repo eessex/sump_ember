@@ -1,6 +1,8 @@
 {{outlet}}
 
-<button id='edit' {{action 'edit'}}>Edit</button>
-<button id='delete' {{action 'delete'}}>Delete</button>
+<div class="edit-actions">
+  <button id='edit' {{action 'edit'}}>Edit</button>
+  <button id='delete' {{action 'delete'}}>Delete</button>
+</div>
 
 {{show-event event=model date=betterDate}}
