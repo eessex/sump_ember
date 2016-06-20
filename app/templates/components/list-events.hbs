@@ -9,7 +9,7 @@
           </span> --}}
         {{/if}}
         <span class="presenter">
-          {{event.name}}
+          <h2>{{link-to event.name}}</h2>
         </span>
       </div>
       {{#if event.showDetails}}
@@ -18,6 +18,7 @@
           {{event.date}}
           {{event.url}}
           {{event.presenter.name}}
+          {{link-to 'deets' 'events.event' event}}
           {{outlet}}
         </div>
       {{/if}}
