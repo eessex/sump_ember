@@ -15,24 +15,11 @@ export default Ember.Component.extend({
     },
     addNewArtist(){
       let store = this.get('store');
-      //get name of artist
       let newArtistName = this.$('input').val()
-      //set name to empty object from new controler
       let newArtistObject = store.createRecord('artist');
       newArtistObject.set('name', newArtistName)
-      newArtistObject.save()
-      //push object into models artist array
+      this.attrs.onArtistAdd(newArtistObject);
+      this.$('input').val('');
     }
-    // showMatches: function(){
-    //   let _that = this;
-    //   this.$('.artist').parent().addClass('active');
-    //   this.$('.artist').on('click', function() {
-    //     let selection = $(this).text()
-    //     debugger
-    //     // _that.get('event.artists').createRecord({name: selection})
-    //     $(this).parent().siblings().val(selection)
-    //     $(this).parent().removeClass('active');
-    //   })
-    // }
   }
 });
