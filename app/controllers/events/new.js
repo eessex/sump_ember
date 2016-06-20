@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
     },
     save() {
       this.get('model').save().then((event) => {
-        this.get('artists').map((artist) => {
+        event.get('artists').map((artist) => {
           artist.get('events').pushObject(event)
           artist.save();
         })

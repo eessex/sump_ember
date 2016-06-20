@@ -33,14 +33,14 @@ export default Base.extend({
    return new Promise((resolve, reject) => {
      ajax(requestOptions).then((response) => {
        const { jwt } = response;
-       // Wrapping aync operation in Ember.run
+       // Wrapping async operation in Ember.run
        run(() => {
          resolve({
            token: jwt
          });
        });
      }, (error) => {
-       // Wrapping aync operation in Ember.run
+       // Wrapping async operation in Ember.run
        run(() => {
          reject(error);
        });
