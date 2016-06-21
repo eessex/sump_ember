@@ -76,14 +76,12 @@ form div {
   margin: 1em 0;
 }
 /*form .results {
-  display: none;
   position: absolute;
   margin-top: 0;
   padding-left: 0;
   list-style: none;
   background-color: #eee;
   z-index: 100;
-  border: 1px solid;
   min-width: 10em;
 }*/
 
@@ -357,3 +355,95 @@ ul.presenter-index li small  {
   vertical-align: text-top;
 }
 
+/* FORMS */
+
+input {
+  border: 0;
+  border-bottom: 3px solid black;
+  background-color: floralwhite;
+  height: 50px;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px
+}
+
+input#new-image button {
+  border: 1px solid black;
+}
+
+textarea {
+  border: 0;
+  border-bottom: 3px solid black;
+  background-color: floralwhite;
+  height: 100px;
+  width: 100%
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: 1px solid black;
+  height: 30px;
+  width: 125px;
+  background-color: floralwhite;
+  display: inline;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-form {
+  float: center;
+  margin-left: 20%;
+  margin-top: 10%;
+}
+
+.login-form input {
+  width: 250px;
+  height: 30px;
+}
+button.save {
+  width: 125px;
+  background: black;
+  color: white;
+
+}
+
+button.save:hover {
+  background: deeppink;
+  border-color: deeppink;
+  color: black;
+}
+
+button.add {
+  position: absolute;
+  right: 0;
+  top: -2em;
+}
+
+.login-form button {
+  width: 125px;
+  background: black;
+  color: white;
+}
+.login-form button:hover {
+  background: deeppink;
+  border-color: deeppink;
+  color: black;
+}
+
+ input[type="file"]::-webkit-file-upload-button {
+   border: 1px solid black;
+   height: 30px;
+   width: 125px;
+   background-color: floralwhite;
+   display: inline;
+   width: 125px;
+ }
+
+ input#new-image {
+   color:floralwhite;
+ }
