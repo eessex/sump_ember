@@ -4,7 +4,7 @@
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
     <div class="header">
       <div class="date">
-          {{formatDate date=event.date}}
+        {{formatDate "MMM DD YYYY @ h.mma" event.date}}
         </div>
         <div class="title">
         {{#if event.presenter}}
