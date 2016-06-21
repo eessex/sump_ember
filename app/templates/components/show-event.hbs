@@ -70,7 +70,7 @@
        <h4 class="date">{{formatDate "MMM DD YYYY @ h.mma" event.date}}
        {{#if event.price}}
          <span class="price"> -
-           {{event.price}}
+           ${{event.price}}
          </span>
        {{else}}
          <span class="price"> - Free</span>
@@ -82,9 +82,9 @@
    </div>
 
      <div class="description">{{event.description}}</div>
-     {{#if event.url}}
-       <h4 class="link">RSVP: {{event.url}}</h4>
-     {{/if}}
+     
+       <h4 class="link">{{event.url}}</h4>
+     
 
 
    <div class="meta">

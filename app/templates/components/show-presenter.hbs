@@ -23,31 +23,21 @@
   <input type='submit' value='update' {{action 'update'}}>
 </form>
 {{else}}
-Name: {{presenter.name}}
-Description: {{presenter.description}}<br>
-url: {{presenter.url}}<br>
-image: {{presenter.image}}<br>
-events:<br>
-{{#each presenter.events as |event|}}
-  {{event.name}}<br>
-{{/each}}
 
-<div class="presenter show vert">
-  <div class="image">
-    {{presenter.image}}
+
+
+<div class="presenter show">
+  <div class="info">
+     <div class="inner">
+{{presenter.description}}
+      <h4 class="link">{{presenter.url}}</h4>    
   </div>
-  <div class="description">
-  <header>
-      <h1 class="title">
-        {{event.presenter.name}}
-      </h1>
-      <h4 class="link">{{presenter.url}}</h4>
-  </header>
-    {{presenter.description}}
   </div>
-  {{#each presenter.events as |event|}}
-    {{event.name}}<br>
-  {{/each}}
+   {{#if presenter.image}}
+     <div class="image">
+       <img src={{presenter.image}}>
+     </div>
+   {{/if}}
   </div>
 
 
