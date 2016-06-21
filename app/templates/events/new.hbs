@@ -1,9 +1,9 @@
 
 <form>
-<h1>New Event</h1>
+<h2>Add event</h2>
 
 <div>
-  <label for="new-image">New Image</label>
+  <label for="new-image">Image</label>
   {{s3-upload id="new-image" onComplete="imageUploadComplete"}}
 </div>
   <div>
@@ -35,7 +35,7 @@
 
   <div>
     <label for="description">Description</label>
-    {{textarea value=model.description id="description"}}
+    {{input value=model.description id="description"}}
   </div>
 
   <div>
@@ -49,5 +49,5 @@
     </div>
   </div>
 
-  <button {{action 'save'}} id="submit" class="btn">Save</button>
+  <button {{action 'save'}} id="submit" class="btn save">Save</button>
 </form>

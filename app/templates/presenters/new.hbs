@@ -1,5 +1,6 @@
 {{outlet}}
 <form>
+  <h2>Add presenter</h2>
   <div>
     <label for='name'>Name</label>
     {{input value=model.name id='name'}}
@@ -20,5 +21,5 @@
     {{input value=model.image id='image'}}
   </div>
 
-  <input type='submit' value='submit' {{action 'save'}}>
+  <button type='submit' class='save'{{action 'save'}}>Save</button>
 </form>
