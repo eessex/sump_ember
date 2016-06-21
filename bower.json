@@ -6,6 +6,7 @@
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "ember-uploader": "0.3.11",
-    "bootstrap-datepicker": "^1.6.1"
+    "bootstrap-datepicker": "^1.6.1",
+    "font-awesome": "~4.5.0"
   }
 }

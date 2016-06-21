@@ -1,9 +1,6 @@
 {{outlet}}
-<div class="filters">
-  <button type="button" {{action "sortByName"}}>Name</button>
-  <button type="button" {{action "sortByDate"}}>Date</button>
-  <button type="button" {{action "sortByPresenter"}}>Presenter</button>
-  <button type="button" {{action "showUpcoming"}}>Upcoming</button>
-</div>
+<h2>Coming Up</h2>
+{{list-events model=upcomingEvents}}
 
-{{list-events model=model}}
+<h2>Past</h2>
+{{list-events model=pastEvents}}
