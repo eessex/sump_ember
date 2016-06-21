@@ -13,14 +13,6 @@ export default Ember.Component.extend({
       jQuery('body').toggleClass('active');
       event.toggleProperty('showDetails', true);
       jQuery(_that).fadeIn();
-      jQuery(_that).children('.event').children().hasClass('image', function() {
-          alert('hi')
-        })
-      },
-      revealSorting: function() {
-        jQuery('.filters ul').on('click', function() {
-        jQuery(this).children('ul').toggleClass('active');
-        });
       },
     sortByName() {
       var sorted = this.get('model').sortBy('name');

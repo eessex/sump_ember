@@ -1,6 +1,31 @@
-{{outlet}}
-
-<button id='edit' {{action 'edit'}}>Edit</button>
-<button id='delete' {{action 'delete'}}>Delete</button>
-
+<div class="presenter show">
+<h4 class="title"><a href="/presenters">Presenters</a> : {{model.name}}</h4>
 {{show-presenter presenter=model}}
+
+<ul class="index">
+  {{#each model.events as |event|}}
+    <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
+    <div class="header">
+      <div class="date">
+          {{formatDate "MMM DD YYYY @ h.mma" event.date}}
+        </div>
+        <div class="title">
+       
+           <span class="presenter">
+            {{event.presenter.name}} Presents:
+          </span>
+    
+          {{event.name}}
+        </div>
+      </div>
+      <div class="toggle-it">+</div>
+      {{#if event.showDetails}}
+        {{show-event event=event}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+</div>
+
+<!-- <button id='edit' {{action 'edit'}}>Edit</button> -->
+<!-- <button id='delete' {{action 'delete'}}>Delete</button> -->
