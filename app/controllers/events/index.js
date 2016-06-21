@@ -16,7 +16,11 @@ export default Ember.Controller.extend({
       this.set('model', sorted);
     },
     showUpcoming() {
-      var filtered = this.get('model').filterBy('upcoming', 'true');
+      var filtered = this.get('model').filterBy('upcoming', 'true').sortBy('date');
+      this.set('model', filtered);
+    },
+    showPast() {
+      var filtered = this.get('model').filterBy('upcoming', 'past').sortBy('date');
       this.set('model', filtered);
     }
   }
