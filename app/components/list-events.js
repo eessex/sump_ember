@@ -3,12 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isVisible: Ember.computed.alias('event.enabled'),
   didInsertElement: function() {
-    jQuery('li.reveal').last().addClass('last');  
-    // jQuery('li.reveal').on('click', function() {
-    //   jQuery('li.reveal').removeClass('active');
-    //   jQuery('li.reveal').children(".ember-view").slideUp()
-    //   jQuery(this).children(".ember-view").slideUp()
-    // })   
+    jQuery('li.reveal').last().addClass('last');
   },
   actions: {
     viewMore: function(event){
