@@ -99,9 +99,9 @@ li.reveal .header .date {
   min-width: 225px;
 }
 
-li.reveal.header .presenter {
+li.reveal .header .presenter {
   font-style: italic;
-    padding-right: 1em;
+  padding-right: 1em;
 }
 
 li.reveal.active {
@@ -169,6 +169,9 @@ li.reveal.active .toggle-it {
   display: inline-block;
   vertical-align: top;
 }
+.event.show .info .inner {
+  margin: 0 4%;
+}
 /*ABOUT PAGE */ 
 body.about header {
   z-index: 2000;
@@ -197,6 +200,17 @@ body.about::after {
   display: inline-block;
   margin-top: 5em;
   vertical-align: top;
+}
+.about .content .inner {
+  margin: 0 4%;
+}
+.about .content .inner .title {
+  border-bottom: 2px solid;
+  display: inline-block;
+}
+.about .content .inner .links a {
+  text-decoration: none;
+  margin-right: 1em;
 }
 .about .map iframe {
   max-width: 100%;
