@@ -1,3 +1,14 @@
 {{outlet}}
+<div class="filters">
+<ul class="parent">
+  <li class="parent"><h4 {{action "revealSorting"}}>Sort +</h4></li>
+    <ul>
+      <li class="child"><button type="button" {{action "sortByName"}}>Name</button></li>
+      <li class="child"><button type="button" {{action "sortByDate"}}>Date</button></li>
+      <li class="child"><button type="button" {{action "sortByPresenter"}}>Presenter</button></li>
+      <li class="child"><button type="button" {{action "showUpcoming"}}>Upcoming</button></li>
+    </ul>
+  </ul>
+</div>
 
 {{list-events model=model}}

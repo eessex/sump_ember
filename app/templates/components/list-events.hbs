@@ -15,13 +15,13 @@
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
     <div class="header">
       <div class="date">
-        {{formatDate "MMM DD YYYY @ h.mma" event.date}}
+          {{formatDate date=event.date}}
         </div>
         <div class="title">
         {{#if event.presenter}}
            <span class="presenter">
             {{event.presenter.name}} Presents:
-          </span>
+          </span> 
         {{/if}}
           {{event.name}}
         </div>

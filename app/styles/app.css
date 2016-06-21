@@ -20,6 +20,12 @@ header h1#logo {
   display: inline-block;
   margin: 0;
 }
+body.active header h1#logo {
+    position: fixed;
+    z-index: 2000;
+    background-color: antiquewhite;
+}
+
 header a {
   text-decoration: none;
 }
@@ -39,6 +45,12 @@ header nav a {
 }
 header nav .about {
   display: none;
+}
+footer {
+  padding: 2%;
+}
+footer a {
+  text-decoration: none;
 }
 ul {
   list-style: none;
@@ -73,6 +85,7 @@ form .results.active {
 h1.title {
   font-style: italic;
   font-size: 2.75em;
+  line-height: 1.15em;
 }
 ul.index {
   border-top: 1px solid;
@@ -145,6 +158,11 @@ li.reveal.active .toggle-it {
   opacity: 1;
   transform: rotate(45deg);
   font-size: 3em;
+  background-color: antiquewhite;
+  top: 0;
+}
+li.reveal.active .toggle-it:hover {
+  color: deeppink;
 }
 
 .filters {
@@ -155,6 +173,14 @@ li.reveal.active .toggle-it {
 }
 .filters h4 {
   margin-top: 0;
+}
+.filters ul.parent li.parent {
+  padding: .5em;
+  padding-top: 0;
+}
+.filters ul.parent li.parent:hover {
+  cursor: pointer;
+  color: deeppink;
 }
 .filters ul ul {
   display: none;
@@ -176,6 +202,7 @@ li.reveal.active .toggle-it {
   display: inline-block;
 /*  height: 100vh;*/
   text-align: center;
+  margin-top: 2em;
 }
 .event.show .image img {  
   max-width: 100%;
@@ -192,6 +219,23 @@ li.reveal.active .toggle-it {
 }
 .event.show .info .inner {
   margin: 0 4%;
+  line-height: 1.5em;
+}
+.event.show .info .inner .date {
+  margin-bottom: 0;
+}
+.event.show .info .inner .venue {
+  margin-top: 0;
+}
+.event.show .info .inner .venue a {
+  font-weight: 400;
+  text-decoration: none;
+}
+.event.show .info .meta {
+  margin-top: 3em;
+}
+.event.show .info .meta h5 {
+  margin: 0;
 }
 /*ABOUT PAGE */ 
 body.about header {
@@ -225,10 +269,14 @@ body.about::after {
 .about .content .inner {
   margin: 0 4%;
 }
-.about .content .inner .title {
-  border-bottom: 2px solid;
-  display: inline-block;
-}
+/*.about .content .inner .title {
+  position: absolute;
+    top: 0;
+    left: 12em;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    padding-bottom: 0em;
+}*/
 .about .content .inner .links a {
   text-decoration: none;
   margin-right: 1em;
@@ -238,13 +286,31 @@ body.about::after {
 }
 
 /* ARTISTS INDEX */
-ul.artist-index {
+h4.title {
+  position: absolute;
+    top: 0;
+    left: 12em;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    padding-bottom: 0em;
+}
+
+ul.artist-index,
+ul.presenter-index {
   display: flex;
   flex-wrap: wrap;
   padding-left: 2%;
+  margin-top: 3em;
 }
-ul.artist-index li {
+ul.artist-index li,
+ul.presenter-index li {
   width: 24%;
 }
-
-
+ul.artist-index li a,
+ul.presenter-index li a {
+  text-decoration: none;
+}
+ul.artist-index li small,
+ul.presenter-index li small  {
+  font-weight: 400;
+}
