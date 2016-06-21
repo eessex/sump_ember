@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isVisible: Ember.computed.alias('event.enabled'),
   didInsertElement: function() {
-    jQuery('li.reveal').last().addClass('last');
   },
   actions: {
       viewMore: function(event){
@@ -13,6 +12,10 @@ export default Ember.Component.extend({
       jQuery('body').toggleClass('active');
       event.toggleProperty('showDetails', true);
       jQuery(_that).fadeIn();
+            debugger
+     jQuery('.event.show').children().length
+
+
       },
     sortByName() {
       var sorted = this.get('model').sortBy('name');

@@ -22,23 +22,24 @@
 
   <input type='submit' value='update' {{action 'update'}}>
 </form>
+
 {{else}}
 
+  <div class="presenter show">
+    <div class="info">
+      <div class="inner">
+        <div class="description">
+          {{presenter.description}}
+        </div>
+        <h4 class="link"><a href="{{presenter.url}}">{{presenter.url}}</a></h4>    
+      </div>
+    </div>
 
+    {{#if presenter.image}}
+      <div class="image">
+        <img src={{presenter.image}}>
+      </div>
+    {{/if}}
 
-<div class="presenter show">
-  <div class="info">
-     <div class="inner">
-{{presenter.description}}
-      <h4 class="link"><a href="{{presenter.url}}">{{presenter.url}}</a></h4>    
   </div>
-  </div>
-   {{#if presenter.image}}
-     <div class="image">
-       <img src={{presenter.image}}>
-     </div>
-   {{/if}}
-  </div>
-
-
 {{/if}}

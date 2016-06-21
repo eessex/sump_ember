@@ -26,7 +26,6 @@ body.active header h1#logo {
     z-index: 2000;
     background-color: antiquewhite;
 }
-
 header a {
   text-decoration: none;
 }
@@ -38,7 +37,9 @@ header nav {
 header nav a {
   margin-left: 1em;
 }
-.events.index header nav .events {
+.events.index header nav .events,
+.events.index header nav .artists,
+.events.index header nav .presenters {
   display: none;
 }
 .events.index header nav .about,
@@ -50,8 +51,7 @@ header nav .about {
 }
 footer {
   padding: 2%;
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 96%;
 }
 footer a {
@@ -132,7 +132,7 @@ li.reveal.active {
   z-index: 1000;
   border-top: none;
   width: 100%;
-  min-height: 100vh;
+  min-height: 98vh;
   padding: 0;
   cursor: default;
 }
@@ -156,6 +156,7 @@ li.reveal .toggle-it {
 }
 li.reveal:hover {
   cursor: pointer;
+  background-color: #fff;
 }
 
 li.reveal:hover .toggle-it {
@@ -183,26 +184,6 @@ li.reveal.active .toggle-it:hover {
   margin-top: 0;
 }
 
-/*.filters ul.parent li.parent {
-  padding: .5em;
-  padding-top: 0;
-}
-.filters ul.parent li.parent:hover {
-  cursor: pointer;
-  color: deeppink;
-}
-.filters ul ul {
-  display: none;
-}
-
-.filters ul ul.active {
-  display: block;
-  z-index: 1500;
-  background-color: red;
-  position: absolute;
-  top: 1.25em;
-}*/
-
 .event.show {
   width: 100%;
 }
@@ -217,6 +198,10 @@ li.reveal.active .toggle-it:hover {
   text-align: center;
   margin-top: 2em;
 }
+.presenter.show .image {
+    width: 46.29%;
+    margin-left: 2%;
+}
 .event.show .image img,
 .presenter.show .image img {
   max-width: 100%;
@@ -225,12 +210,16 @@ li.reveal.active .toggle-it:hover {
   width: auto;
   margin: 0 auto;
 }
-
+.event.show .no-image{
+  display: inline-block;
+  width: 12%;
+}
 .event.show .info,
 .presenter.show .info {
   width: 49.29%;
   display: inline-block;
   vertical-align: top;
+  margin-top: 2em;
 }
 .event.show .info .inner,
 .presenter.show .info .inner {
@@ -243,13 +232,24 @@ li.reveal.active .toggle-it:hover {
   font-weight: 400;
 }
 
-.presenter.show .info .inner {
+.presenter.show .info .inner .description {
   margin-top: 3em;
   font-weight: 700;
+  font-size: larger;
+  line-height: 1.45em;
 }
-.presenter.show .info .inner .description {
+.presenter.show .info .inner {
   font-weight: 400;
+  font-size: inherit;
 }
+.show h4.events-list {
+  margin-left: 2%; 
+}
+.show h4.events-list i {
+  vertical-align: text-top;
+  margin-left: .25em;
+}
+
 .event.show .info .inner .date {
   margin-bottom: 0;
 }
@@ -277,9 +277,7 @@ body.about header {
 .about h5.fb a {
   text-decoration: none;
 }
-.about h5.fb {
-  margin-bottom: 4em;
-}
+
 body.about::after {
   content: "";
   background: url('https://s3.amazonaws.com/sump/uploads/foam.jpg');
@@ -305,17 +303,13 @@ body.about::after {
   margin: 0 4%;
   padding-top: 2em;
 }
-/*.about .content .inner .title {
-  position: absolute;
-    top: 0;
-    left: 12em;
-    text-decoration: none;
-    border-bottom: 2px solid;
-    padding-bottom: 0em;
-}*/
+.about .content .inner .description h2 {
+  font-size: xx-large;
+  line-height: 1.45em;
+  margin-right: 1em;
+}
 .about .content .inner .links a {
   text-decoration: none;
-  margin-right: 2em;
 }
 .about .map iframe {
   max-width: 100%;
