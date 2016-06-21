@@ -52,12 +52,14 @@
   </form>
   {{else}}
 
-  <div class="event show vert">
-    <div class="image">
-      <img src={{event.image}} >
-    </div>
+    <div class="event show has-image vert">
+  {{#if event.image}}
+      <div class="image">
+        <img src={{event.image}}>
+      </div>
+    {{/if}}
     <div class="description">
-    <header>
+    <div class="title">
       {{#if event.presenter}}
         <h3 class="presenter">
           {{event.presenter.name}} Presents:
@@ -74,7 +76,7 @@
       {{/if}}
       </h4>
 
-    </header>
+    </div>
       {{event.description}}
       {{event.url}}
     </div>

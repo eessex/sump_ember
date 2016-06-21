@@ -1,14 +1,24 @@
 body {
   font-family: 'Karla', sans-serif;
 }
+header {
+  padding: 0 .5em;
+  margin-bottom: .5em;
+}
 header h1#logo {
   display: inline-block;
   margin: 0;
 }
-
+header a {
+  text-decoration: none;
+}
 header nav {
   float: right;
 }
+header nav a {
+  margin-left: 1em;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -46,6 +56,8 @@ h1.title {
 
 li.reveal {
   border-top: 1px solid;
+  padding: 1em 0.5em;
+  position: relative;
 }
 li.reveal.last {
   border-bottom: 1px solid;
@@ -55,9 +67,28 @@ li.reveal .header {
   -webkit-transition: opacity 1s; 
   transition: opacity 1s;
 }
-
+li.reveal .header div {
+  display: inline-block;
+}
 li.reveal.active .header {
   opacity: 0;
+}
+
+li.reveal .toggle-it {
+  position: absolute;
+  right: .5em;
+  font-size: 2em;
+  top: 0.15em;
+  opacity: 0;
+}
+
+li.reveal:hover .toggle-it {
+  opacity: 1;
+}
+
+li.reveal.active .toggle-it {
+  opacity: 1;
+  transform: rotate(45deg);
 }
 
 .event.show {
@@ -81,4 +112,109 @@ li.reveal.active .header {
   width: 49.29%;
   display: inline-block;
   vertical-align: top;
+}
+/*ABOUT PAGE */ 
+body.about {
+  background-image: url('https://s3.amazonaws.com/sump/uploads/foam.jpg');
+  background-size: cover;
+  background-position: 50%; 
+}
+
+
+.g-1,
+.g-1-1,
+.g-1-2,
+.g-1-3,
+.g-2-3,
+.g-1-4,
+.g-3-4,
+.g-1-6,
+.g-5-6,
+.g-1-12,
+.g-2-12,
+.g-3-12,
+.g-4-12,
+.g-5-12,
+.g-6-12,
+.g-7-12,
+.g-8-12,
+.g-9-12,
+.g-10-12,
+.g-11-12,
+.g-12-12 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.g-1-12 {
+    width: 8.3333%;
+    *width: 8.3023%;
+}
+
+.g-1-6,
+.g-2-12 {
+    width: 16.6667%;
+    *width: 16.6357%;
+}
+
+.g-1-4,
+.g-3-12 {
+    width: 25%;
+    *width: 24.9690%;
+}
+
+.g-1-3,
+.g-4-12 {
+    width: 33.3333%;
+    *width: 33.3023%;
+}
+
+.g-5-12 {
+    width: 41.6667%;
+    *width: 41.6357%;
+}
+
+.g-1-2,
+.g-6-12 {
+    width: 50%;
+    *width: 49.9690%;
+}
+
+.g-7-12 {
+    width: 58.3333%;
+    *width: 58.3023%;
+}
+
+.g-2-3,
+.g-8-12 {
+    width: 66.6667%;
+    *width: 66.6357%;
+}
+
+.g-3-4,
+.g-9-12 {
+    width: 75%;
+    *width: 74.9690%;
+}
+
+.g-5-6,
+.g-10-12 {
+    width: 83.3333%;
+    *width: 83.3023%;
+}
+
+.g-11-12 {
+    width: 91.6667%;
+    *width: 91.6357%;
+}
+
+.g-1,
+.g-1-1,
+.g-12-12 {
+    width: 100%;
 }
