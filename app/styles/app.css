@@ -1,14 +1,34 @@
 body {
   font-family: 'Karla', sans-serif;
+  margin: 8px 0;
+  color: #222;
+  background-color: floralwhite;
+}
+a {
+  color: #222;
+}
+
+a:hover {
+  color: deeppink;
+}
+header {
+  padding: 0 .5em;
+  margin-bottom: .5em;
 }
 header h1#logo {
   display: inline-block;
   margin: 0;
 }
-
+header a {
+  text-decoration: none;
+}
 header nav {
   float: right;
 }
+header nav a {
+  margin-left: 1em;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -46,6 +66,8 @@ h1.title {
 
 li.reveal {
   border-top: 1px solid;
+  padding: 1em 0.5em;
+  position: relative;
 }
 li.reveal.last {
   border-bottom: 1px solid;
@@ -55,21 +77,71 @@ li.reveal .header {
   -webkit-transition: opacity 1s; 
   transition: opacity 1s;
 }
+li.reveal .header div {
+  display: inline-block;
+}
+li.reveal .header .date {
+  min-width: 225px;
+}
+
+li.reveal.header .presenter {
+  font-style: italic;
+    padding-right: 1em;
+}
+
+li.reveal.active {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  border-top: none;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  cursor: default;
+}
+li.reveal.active .event.show {
+  width: 96%;
+  padding: 2%;
+}
 
 li.reveal.active .header {
   opacity: 0;
 }
 
+li.reveal .toggle-it {
+  position: absolute;
+  right: .5em;
+  font-size: 2em;
+  top: 0.15em;
+  opacity: 0;
+  -webkit-transition: opacity 1s; 
+  transition: opacity 1s;
+}
+li.reveal:hover {
+  cursor: pointer;
+}
+
+li.reveal:hover .toggle-it {
+  opacity: 1;
+}
+
+li.reveal.active .toggle-it {
+  opacity: 1;
+  transform: rotate(45deg);
+  font-size: 3em;
+}
+
 .event.show {
   width: 100%;
 }
-.event.show.vert .image {
+.event.show .image {
   width: 49.29%;
   display: inline-block;
 /*  height: 100vh;*/
   text-align: center;
 }
-.event.show.vert .image img {  
+.event.show .image img {  
   max-width: 100%;
   height: auto;
   max-height: 90vh;
@@ -77,8 +149,26 @@ li.reveal.active .header {
   margin: 0 auto;
 }
 
-.event.show.vert .description {
+.event.show .info {
   width: 49.29%;
   display: inline-block;
   vertical-align: top;
 }
+/*ABOUT PAGE */ 
+body.about {
+  background-image: url('https://s3.amazonaws.com/sump/uploads/foam.jpg');
+  background-size: cover;
+  background-position: 50%; 
+}
+
+/* ARTISTS INDEX */
+ul.artist-index {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: .5em;
+}
+ul.artist-index li {
+  width: 24%;
+}
+
+

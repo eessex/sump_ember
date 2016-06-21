@@ -1,14 +1,9 @@
 {{outlet}}
 <h1 class="title">artists</h1>
-<ul>
+<ul class="artist-index">
   {{#each model as |artist|}}
-    <li>
-      <h2>{{link-to artist.name "artists.artist" artist}} <small>({{artist.events.length}})</small></h2>
-      <ul class="reveal">
-      {{#each artist.events as |event|}}
-          <li>{{event.name}}</li>
-      {{/each}}
-      </ul>
+    <li class="artist pure-u-sm-1-2 pure-u-lg-1-4">
+      <h3>{{link-to artist.name "artists.artist" artist}} <small>({{artist.events.length}})</small></h3>
     </li>
   {{/each}}
 </ul>
