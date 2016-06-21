@@ -22,7 +22,6 @@ export default Ember.Component.extend({
         jQuery(this).children('ul').toggleClass('active');
         });
       },
-    },
     sortByName() {
       var sorted = this.get('model').sortBy('name');
       this.set('model', sorted);
@@ -40,7 +39,8 @@ export default Ember.Component.extend({
       this.set('model', filtered);
     },
     showPast() {
-      var filtered = this.get('model').filterBy('upcoming', 'past').sortBy('date');
+      var filtered = this.get('model').filterBy('upcoming', 'false').sortBy('date');
       this.set('model', filtered);
+}
 }
 });

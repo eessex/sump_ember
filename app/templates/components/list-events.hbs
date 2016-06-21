@@ -1,14 +1,18 @@
 {{yield}}
-<div class="filters">
+{{!-- <div class="filters">
 <ul class="parent">
   <li class="parent"><h4 {{action "revealSorting"}}>Sort +</h4></li>
     <ul>
       <li class="child"><button type="button" {{action "sortByName"}}>Name</button></li>
       <li class="child"><button type="button" {{action "sortByDate"}}>Date</button></li>
       <li class="child"><button type="button" {{action "sortByPresenter"}}>Presenter</button></li>
-      <li class="child"><button type="button" {{action "showUpcoming"}}>Upcoming</button></li>
     </ul>
   </ul>
+</div> --}}
+
+<div class="filters">
+  <a href="#" {{action "sortByDate"}} class="date">Date {{fa-icon "sort-desc"}}</a>
+  <a href="#" {{action "sortByName"}} class="name">Name {{fa-icon "sort-desc"}}</a>
 </div>
 
 <ul class="index">
@@ -16,7 +20,7 @@
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
     <div class="header">
       <div class="date">
-          {{formatDate date=event.date}}
+          {{formatDate "MMM DD YYYY @ h.mma" event.date}}
         </div>
         <div class="title">
         {{#if event.presenter}}
