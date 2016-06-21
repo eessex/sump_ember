@@ -3,18 +3,19 @@
   {{#each model as |event|}}
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
     <div class="header">
-      <span class="date">
-          {{format-date event.date}}
-        </span>
+      <div class="date g-1-4">
+          {{formatDate date=event.date}}
+        </div>
+        <div class="title">
         {{#if event.presenter}}
            <span class="presenter">
             {{event.presenter.name}} Presents:
           </span>
         {{/if}}
-        <span class="title">
           {{event.name}}
-        </span>
+        </div>
       </div>
+      <div class="toggle-it">+</div>
       {{#if event.showDetails}}
         {{show-event event=event}}
       {{/if}}
