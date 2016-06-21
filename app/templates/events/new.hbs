@@ -13,7 +13,8 @@
 
   <div>
     <label for="date">Date</label>
-    {{input type="datetime-local" value=model.date id="date"}}
+    {{!-- {{input type="datetime-local" value=model.date id="date"}} --}}
+    {{bootstrap-datepicker startView="year" todayHighlight=true autoclose=false value=model.date}}
   </div>
 
   <div>
@@ -45,7 +46,7 @@
     <div class="selectedPresenter">
         <div class="">
           {{model.presenter.name}}
-        </div> 
+        </div>
     </div>
   </div>
 
