@@ -83,6 +83,7 @@
 
      <div class="description">{{event.description}}</div>
      
+
        <h4 class="link">{{event.url}}</h4>
      
 
@@ -91,10 +92,10 @@
    <ul class="artists">
    {{#each event.artists as |artist|}}
      <li>
-       {{#link-to "artists.artist" artist}}
-         <h5>{{artist.name}}
-         <small>({{artist.events.length}})</small></h5>
-       {{/link-to}}
+     <!--   {{#link-to "artists.artist" artist}}-->
+       <!--  <h5>{{artist.name}}
+         <small>({{artist.events.length}})</small></h5>-->
+     <!--   {{/link-to}}-->
      </li>
    {{/each}}
    </ul>

@@ -52,9 +52,13 @@ footer {
   padding: 2%;
   position: absolute;
   bottom: 0;
+  width: 96%;
 }
 footer a {
   text-decoration: none;
+}
+footer a.logout {
+  float: right;
 }
 ul {
   list-style: none;
@@ -200,6 +204,9 @@ li.reveal.active .toggle-it:hover {
 .event.show {
   width: 100%;
 }
+.presenter.show {
+  margin-bottom: 2em;
+}
 .event.show .image,
 .presenter.show .image {
   width: 49.29%;
@@ -228,10 +235,19 @@ li.reveal.active .toggle-it:hover {
   margin: 0 4%;
   line-height: 1.5em;
 }
-.presenter.show .info .inner {
-  margin-top: 3em;
+.event.show .info .inner h4.link a,
+.presenter.show .info .inner h4.link a {
+  text-decoration: none;
+  font-weight: 400;
 }
 
+.presenter.show .info .inner {
+  margin-top: 3em;
+  font-weight: 700;
+}
+.presenter.show .info .inner .description {
+  font-weight: 400;
+}
 .event.show .info .inner .date {
   margin-bottom: 0;
 }
@@ -256,6 +272,12 @@ body.about header {
   right: 0;
   top: 0;
 }
+.about h5.fb a {
+  text-decoration: none;
+}
+.about h5.fb {
+  margin-bottom: 4em;
+}
 body.about::after {
   content: "";
   background: url('https://s3.amazonaws.com/sump/uploads/foam.jpg');
@@ -279,6 +301,7 @@ body.about::after {
 }
 .about .content .inner {
   margin: 0 4%;
+  padding-top: 2em;
 }
 /*.about .content .inner .title {
   position: absolute;
@@ -290,7 +313,7 @@ body.about::after {
 }*/
 .about .content .inner .links a {
   text-decoration: none;
-  margin-right: 1em;
+  margin-right: 2em;
 }
 .about .map iframe {
   max-width: 100%;
