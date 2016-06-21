@@ -1,6 +1,18 @@
 {{outlet}}
+<div class="filters">
+<ul class="parent">
+  <li class="parent"><h4 {{action "revealSorting"}}>Sort +</h4></li>
+    <ul>
+      <li class="child"><button type="button" {{action "sortByName"}}>Name</button></li>
+      <li class="child"><button type="button" {{action "sortByDate"}}>Date</button></li>
+      <li class="child"><button type="button" {{action "sortByPresenter"}}>Presenter</button></li>
+      <li class="child"><button type="button" {{action "showUpcoming"}}>Upcoming</button></li>
+    </ul>
+  </ul>
+</div>
+
 <h2>Coming Up</h2>
-{{list-events model=upcomingEvents}}
+{{list-events model=upcomingEvents class="upcoming"}}
 
 <h2>Past</h2>
-{{list-events model=pastEvents}}
+{{list-events model=pastEvents class="past"}}

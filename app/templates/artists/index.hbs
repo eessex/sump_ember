@@ -1,8 +1,8 @@
 {{outlet}}
-<h1 class="title">artists</h1>
+<h4 class="title">Artists</h4>
 <ul class="artist-index">
   {{#each model as |artist|}}
-    <li class="artist pure-u-sm-1-2 pure-u-lg-1-4">
+    <li class="artist">
       <h3>{{link-to artist.name "artists.artist" artist}} <small>({{artist.events.length}})</small></h3>
     </li>
   {{/each}}
