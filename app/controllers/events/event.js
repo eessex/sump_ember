@@ -8,8 +8,5 @@ export default Ember.Controller.extend({
       console.log(event.isEditing)
     },
   },
-  showDetails: false,
-  betterDate: Ember.computed(function() {
-    return moment("1995-12-25").format("MMM DD, YYYY HH:mm");
-  }),
+  showDetails: false
 });
