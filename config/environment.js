@@ -47,6 +47,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.host = 'https://sump-data.herokuapp.com';
 
   }
 
