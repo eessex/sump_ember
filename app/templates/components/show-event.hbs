@@ -58,7 +58,7 @@
         <img src={{event.image}}>
       </div>
     {{/if}}
-    <div class="description">
+    <div class="info">
     <div class="title">
       {{#if event.presenter}}
         <h3 class="presenter">
@@ -77,8 +77,11 @@
       </h4>
 
     </div>
-      {{event.description}}
-      {{event.url}}
+
+      <div class="description">{{event.description}}</div>
+      {{#if event.url}}
+        <h4 class="link">RSVP: {{event.url}}</h4>
+      {{/if}}
     </div>
 
     <div class="meta">

@@ -13,9 +13,10 @@ export default Ember.Component.extend({
   actions: {
     viewMore: function(event){
     let _that = jQuery('li#' + event.id)
-    let pos = _that.offset();
+    jQuery(_that).hide();
     jQuery(_that).toggleClass('active');
-     event.toggleProperty('showDetails', true);
+    event.toggleProperty('showDetails', true);
+    jQuery(_that).fadeIn();
     }
   }
 });
