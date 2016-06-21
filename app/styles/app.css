@@ -12,8 +12,9 @@ a:hover {
   color: deeppink;
 }
 header {
-  padding: 0 .5em;
+  padding: 0 2%;
   margin-bottom: .5em;
+  height: 2.5em;
 }
 header h1#logo {
   display: inline-block;
@@ -24,11 +25,21 @@ header a {
 }
 header nav {
   float: right;
+  padding-top: .65em;
+  font-weight: 700;
 }
 header nav a {
   margin-left: 1em;
 }
-
+.events.index header nav .events {
+  display: none;
+}
+.events.index header nav .about {
+  display: block;
+}
+header nav .about {
+  display: none;
+}
 ul {
   list-style: none;
   padding-left: 0;
@@ -63,10 +74,14 @@ h1.title {
   font-style: italic;
   font-size: 2.75em;
 }
-
+ul.index {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
 li.reveal {
   border-top: 1px solid;
-  padding: 1em 0.5em;
+  border-bottom: 1px solid;
+  padding: 1em 2%;
   position: relative;
 }
 li.reveal.last {
@@ -111,7 +126,7 @@ li.reveal.active .header {
 
 li.reveal .toggle-it {
   position: absolute;
-  right: .5em;
+  right: 2%;
   font-size: 2em;
   top: 0.15em;
   opacity: 0;
@@ -155,17 +170,43 @@ li.reveal.active .toggle-it {
   vertical-align: top;
 }
 /*ABOUT PAGE */ 
-body.about {
-  background-image: url('https://s3.amazonaws.com/sump/uploads/foam.jpg');
-  background-size: cover;
-  background-position: 50%; 
+body.about header {
+  z-index: 2000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0.5em;
+}
+body.about::after {
+  content: "";
+  background: url('https://s3.amazonaws.com/sump/uploads/foam.jpg');
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;    
+  background-size: auto 100%;
+}
+
+
+.about .map,
+.about .content {
+  width: 49.2%;
+  display: inline-block;
+  margin-top: 5em;
+  vertical-align: top;
+}
+.about .map iframe {
+  max-width: 100%;
 }
 
 /* ARTISTS INDEX */
 ul.artist-index {
   display: flex;
   flex-wrap: wrap;
-  padding-left: .5em;
+  padding-left: 2%;
 }
 ul.artist-index li {
   width: 24%;
