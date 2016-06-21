@@ -52,30 +52,31 @@
   </form>
   {{else}}
 
-    <div class="event show has-image vert">
+    <div class="event show">
   {{#if event.image}}
       <div class="image">
         <img src={{event.image}}>
       </div>
     {{/if}}
     <div class="info">
-    <div class="title">
-      {{#if event.presenter}}
-        <h3 class="presenter">
-          {{event.presenter.name}} Presents:
-        </h3>
-      {{/if}}
-      <h1 class="title">{{event.name}}</h1>
-      <h4 class="date">{{formatDate date=event.date}}
-      {{#if event.price}}
-        <span class="price"> -
-          {{event.price}}
-        </span>
-      {{else}}
-        <span class="price"> - Free</span>
-      {{/if}}
-      </h4>
-
+      <div class="inner">
+      <div class="title">
+        {{#if event.presenter}}
+          <h3 class="presenter">
+            {{event.presenter.name}} Presents:
+          </h3>
+        {{/if}}
+        <h1 class="title">{{event.name}}</h1>
+        <h4 class="date">{{formatDate date=event.date}}
+        {{#if event.price}}
+          <span class="price"> -
+            {{event.price}}
+          </span>
+        {{else}}
+          <span class="price"> - Free</span>
+        {{/if}}
+        </h4>
+      </div>
     </div>
 
       <div class="description">{{event.description}}</div>
