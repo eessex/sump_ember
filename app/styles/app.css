@@ -102,7 +102,7 @@ li.reveal.last {
 }
 li.reveal .header {
   opacity: 1;
-  -webkit-transition: opacity 1s; 
+  -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
 li.reveal .header div {
@@ -143,7 +143,7 @@ li.reveal .toggle-it {
   font-size: 2em;
   top: 0.15em;
   opacity: 0;
-  -webkit-transition: opacity 1s; 
+  -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
 li.reveal:hover {
@@ -204,7 +204,7 @@ li.reveal.active .toggle-it:hover {
   text-align: center;
   margin-top: 2em;
 }
-.event.show .image img {  
+.event.show .image img {
   max-width: 100%;
   height: auto;
   max-height: 90vh;
@@ -237,7 +237,7 @@ li.reveal.active .toggle-it:hover {
 .event.show .info .meta h5 {
   margin: 0;
 }
-/*ABOUT PAGE */ 
+/*ABOUT PAGE */
 body.about header {
   z-index: 2000;
   position: fixed;
@@ -254,7 +254,7 @@ body.about::after {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;    
+  z-index: -1;
   background-size: auto 100%;
 }
 
@@ -306,6 +306,7 @@ ul.artist-index li,
 ul.presenter-index li {
   width: 24%;
 }
+
 ul.artist-index li a,
 ul.presenter-index li a {
   text-decoration: none;
@@ -313,4 +314,18 @@ ul.presenter-index li a {
 ul.artist-index li small,
 ul.presenter-index li small  {
   font-weight: 400;
+
+.filters a {
+  text-decoration: none;
+  padding-left: 2%;
+  font-size: 0.85em;
+}
+
+.filters a.date {
+  min-width: 225px;
+}
+
+h2 {
+  padding-left: 2%;
+>>>>>>> 2ab85201dbd16a3c85095fdbddb6c3eece32a288
 }
