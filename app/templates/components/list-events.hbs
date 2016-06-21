@@ -1,9 +1,9 @@
 {{yield}}
-<ul>
+<ul class="index">
   {{#each model as |event|}}
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
     <div class="header">
-      <div class="date g-1-4">
+      <div class="date">
           {{formatDate date=event.date}}
         </div>
         <div class="title">
