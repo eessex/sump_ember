@@ -147,6 +147,27 @@ li.reveal.active .toggle-it {
   font-size: 3em;
 }
 
+.filters {
+  display: inline-block;
+  position: absolute;
+  right: 7em;
+  top: 1.15em;
+}
+.filters h4 {
+  margin-top: 0;
+}
+.filters ul ul {
+  display: none;
+}
+
+.filters ul ul.active {
+  display: block;
+  z-index: 2000;
+  background-color: red;
+  position: absolute;
+  top: 1.25em;
+}
+
 .event.show {
   width: 100%;
 }
