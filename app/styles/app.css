@@ -188,7 +188,7 @@ li.reveal.active .toggle-it:hover {
 
 .filters ul ul.active {
   display: block;
-  z-index: 2000;
+  z-index: 1500;
   background-color: red;
   position: absolute;
   top: 1.25em;
