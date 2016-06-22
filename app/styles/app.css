@@ -39,11 +39,14 @@ header nav a {
 }
 .events.index header nav .events,
 .events.index header nav .artists,
-.events.index header nav .presenters {
+.artists.index header nav .artists,
+.events.index header nav .presenters,
+.presenters.index header nav .presenters {
   display: none;
 }
 .events.index header nav .about,
-.artists.index header nav .about {
+.artists.index header nav .about,
+.presenters.index header nav .about {
   display: inline-block;
 }
 header nav .about {
@@ -140,7 +143,8 @@ li.reveal.active .event.show {
 }
 
 li.reveal.active .header {
-  opacity: 0;
+  color: #fff;
+/*  opacity: 0;*/
 }
 
 li.reveal .toggle-it {

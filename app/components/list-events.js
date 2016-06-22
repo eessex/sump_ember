@@ -7,15 +7,12 @@ export default Ember.Component.extend({
   actions: {
       viewMore: function(event){
       let _that = jQuery('li#' + event.id)
-      jQuery(_that).hide();
       jQuery(_that).toggleClass('active');
       jQuery('body').toggleClass('active');
+      jQuery(_that).children('.header').toggleClass('is-hidden')
+      jQuery(_that).hide();
       event.toggleProperty('showDetails', true);
       jQuery(_that).fadeIn();
-            debugger
-     jQuery('.event.show').children().length
-
-
       },
     sortByName() {
       var sorted = this.get('model').sortBy('name');
