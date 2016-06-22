@@ -3,14 +3,14 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isVisible: Ember.computed.alias('event.enabled'),
   didInsertElement: function() {
-    jQuery('li.reveal').last().addClass('last');
   },
   actions: {
       viewMore: function(event){
       let _that = jQuery('li#' + event.id)
-      jQuery(_that).hide();
       jQuery(_that).toggleClass('active');
       jQuery('body').toggleClass('active');
+      jQuery(_that).children('.header').toggleClass('is-hidden')
+      jQuery(_that).hide();
       event.toggleProperty('showDetails', true);
       jQuery(_that).fadeIn();
       },

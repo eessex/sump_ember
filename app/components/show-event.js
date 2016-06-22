@@ -3,11 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   store: Ember.inject.service(),
   allPresenters: Ember.computed(function() {
-    var store = this.get('store');
+    let store = this.get('store');
     return store.findAll('presenter');
   }),
   allArtists: Ember.computed(function() {
-    var store = this.get('store');
+    let store = this.get('store');
     return store.findAll('artist');
   }),
   actions: {

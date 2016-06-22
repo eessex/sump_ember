@@ -2,6 +2,7 @@
 <h4 class="title"><a href="/presenters">Presenters</a> : {{model.name}}</h4>
 {{show-presenter presenter=model}}
 
+<h4 class="events-list">Events organized by {{model.name}}  <i class="fa fa-sort-desc"></i></h4>
 <ul class="index">
   {{#each model.events as |event|}}
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
