@@ -28,5 +28,7 @@
 </ul>
 </div>
 
-<!-- <button id='edit' {{action 'edit'}}>Edit</button> -->
-<!-- <button id='delete' {{action 'delete'}}>Delete</button> -->
+{{#if session.isAuthenticated}}
+<button id='edit' {{action 'edit'}}>Edit</button>
+<button id='delete' {{action 'delete'}}>Delete</button>
+{{/if}}

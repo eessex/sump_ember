@@ -118,7 +118,7 @@ li.reveal .header div {
   display: inline-block;
 }
 li.reveal .header .date {
-  min-width: 225px;
+  min-width: 220px;
 }
 
 li.reveal .header .presenter {
@@ -208,7 +208,7 @@ li.reveal.active .toggle-it:hover {
 .presenter.show .image img {
   max-width: 100%;
   height: auto;
-  max-height: 90vh;
+  max-height: 85vh;
   width: auto;
   margin: 0 auto;
 }
@@ -363,7 +363,7 @@ ul.presenter-index li small  {
 
 input {
   border: 0;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
   background-color: floralwhite;
   height: 50px;
   width: 100%;
@@ -377,7 +377,7 @@ input#new-image button {
 
 textarea {
   border: 0;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
   background-color: floralwhite;
   height: 100px;
   width: 100%
