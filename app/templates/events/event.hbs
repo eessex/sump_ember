@@ -1,9 +1,10 @@
 {{outlet}}
+
+{{show-event event=model}}
+
 {{#if session.isAuthenticated}}
 <div class="edit-actions">
   <button id='edit' {{action 'edit'}}>Edit</button>
   <button id='delete' {{action 'delete'}}>Delete</button>
 </div>
 {{/if}}
-
-{{show-event event=model}}
