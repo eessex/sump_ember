@@ -26,10 +26,18 @@ header h1#logo {
   display: inline-block;
   margin: 0;
 }
-body.active header h1#logo {
-    position: fixed;
-    z-index: 2000;
-    background-color: antiquewhite;
+h1.reveal a {
+  text-decoration: none;
+}
+h1.reveal {
+  position: fixed;
+  top: -0.175em;
+  background-color: antiquewhite;
+  z-index: 2000;
+}
+h1.reveal a:hover {
+  color: deeppink;
+  cursor: pointer;
 }
 header a {
   text-decoration: none;
@@ -46,12 +54,14 @@ header nav a {
 .events.index header nav .artists,
 .artists.index header nav .artists,
 .events.index header nav .presenters,
-.presenter header nav .presenters {
+.presenters.index header nav .presenters,
+.presenters.index .filters,
+.artists.index .filters {
   display: none;
 }
 .events.index header nav .about,
 .artists.index header nav .about,
-.presenter header nav .about {
+.presenters.index header nav .about {
   display: inline-block;
 }
 header nav .about {
@@ -142,7 +152,7 @@ li.reveal .header .presenter {
   padding-right: 1em;
 }
 
-.event-details.active {
+.index .event-details .ember-view {
   position: absolute;
   top: 0;
   background-color: #fff;
@@ -152,7 +162,7 @@ li.reveal .header .presenter {
   min-height: 98vh;
   padding: 0;
 }
-.event-details.active .event.show {
+.index .event-details .event.show {
   width: 96%;
   padding: 2%;
 }
@@ -180,7 +190,7 @@ li.reveal:hover .toggle-it {
   opacity: 1;
 }
 
-.event-details.active .toggle-it {
+.event-details .toggle-it {
 /*  opacity: 1;*/
   transform: rotate(45deg);
   font-size: 3.25em;
@@ -190,16 +200,19 @@ li.reveal:hover .toggle-it {
   position: fixed;
   z-index: 1000;
 }
-.event-details.active .toggle-it:hover {
+.event-details .toggle-it:hover {
   color: deeppink;
 }
-.event-details.active .window {
+.event-details .window {
   position: absolute;
   top:0;
   bottom: 0;
   left: 0;
   right: 50%;
   opacity: .01;
+}
+.event-details .window.no-img.l {
+  right: 82%;
 }
 
 .filters {
@@ -240,7 +253,7 @@ li.reveal:hover .toggle-it {
 }
 .event.show .no-image{
   display: inline-block;
-  width: 12%;
+  width: 15%;
 }
 .event.show .info,
 .presenter.show .info {
@@ -249,11 +262,23 @@ li.reveal:hover .toggle-it {
   vertical-align: top;
   margin-top: 2em;
 }
+.no-img .event.show .info,
+.no-img .presenter.show .info {
+  max-width: 700px;
+  margin: 2em auto;
+  width: 100%;
+}
+
 .event.show .info .inner,
 .presenter.show .info .inner {
   margin: 0 4%;
   line-height: 1.5em;
 }
+.event.show .info .inner h3.presenter a,
+.presenter.show .info .inner h3.presenter a {
+  text-decoration: none;
+}
+
 .event.show .info .inner h4.link a,
 .presenter.show .info .inner h4.link a {
   text-decoration: none;
@@ -293,6 +318,10 @@ li.reveal:hover .toggle-it {
 }
 .event.show .info .meta h5 {
   margin: 0;
+}
+.event.show .info h5.link a {
+  text-decoration: none;
+  font-weight: 400;
 }
 /*ABOUT PAGE */
 body.about header {
@@ -355,6 +384,15 @@ h4.title {
 h4.title a {
   text-decoration: none;
 }
+
+.artist.show h4.title,
+.presenters.index h4.title {
+  border: none;
+}
+.artist.show h4.title a,
+.presenters.index h4.title a {
+  border-bottom: 2px solid;
+}
 ul.artist-index,
 ul.presenter-index {
   display: flex;
@@ -375,6 +413,8 @@ ul.artist-index li small,
 ul.presenter-index li small  {
   font-weight: 400;
 }
+
+
 
 .filters a {
   text-decoration: none;
@@ -498,22 +538,53 @@ button.add {
     width: 50%;
   }
 }
- @media screen and (max-width: 950px) {
-    li.reveal .header .date {
-      display: block;
-      padding-bottom: .35em;
-    }
-    li.reveal .header .title {
-      font-weight: 700;
-    }
-    li.reveal .header .presenter {
-      font-weight: normal;
-      padding-bottom: .35em;
-    }
-    li.reveal .header div {
+@media screen and (max-width: 950px) {
+  li.reveal {
+    padding: 1.5em 2%;
+  }
+  li.reveal .header .date {
+    display: block;
+    padding-bottom: .35em;
+  }
+  li.reveal .header .title {
+    font-weight: 700;
+    font-size: 1.35em;
+    font-style: italic;
+  }
+  li.reveal .header .presenter {
+    font-weight: normal;
+    padding-bottom: .35em;
+    font-size: large;
+  }
+  li.reveal .header div {
     max-width: 100vw;
   }
   .about .map, .about .content {
     width: 100%;
+  }
+  .event.show .image, 
+  .presenter.show .image,
+  .event.show .info, 
+  .presenter.show .info {
+    width: 100%;
+    max-width: 700px;
+    margin: 2em auto;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  h4.title {
+    position: relative;
+    left: 2%;
+    font-size: larger;
+    margin-bottom: 2em;
+    border: none;
+  }
+  .event-details .window {
+    display: none;
+  }
+  .filters {
+    right: 5em;
   }
 }

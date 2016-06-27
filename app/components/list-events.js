@@ -1,26 +1,40 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // sortProperties: ['name', 'date', 'presenter.name', 'upcoming'],
-  // sortAscending: true,
+  showDetails: false,
 
-  isVisible: Ember.computed.alias('event.enabled'),
-  didInsertElement: function() {
-  },
   actions: {
-      viewMore: function(event){
-      let header = jQuery('li#' + event.id);
-      let eventBody = header.next();
-        jQuery(header).toggleClass('active');
-        jQuery('body').addClass('active');      
-        jQuery(eventBody).hide();
-        jQuery(eventBody).toggleClass('active');
-        event.toggleProperty('showDetails', true);
-        jQuery(eventBody).fadeIn();
-        jQuery(header).children('.toggle-it').fadeIn();
-      },
-
-
+    viewMore: function(event){
+      if (event.get('image') == null) {
+        Ember.$('.event-details').addClass('no-img')
+      }
+      this.set("currentEvent", event)
+      Ember.$('.event-details').hide()
+      Ember.$('footer').hide()
+      this.toggleProperty('showDetails')
+      Ember.$('.event-details').fadeIn()
+    },
+    goToIndexPage(){
+      Ember.$('.event-details').fadeOut()
+      Ember.$('footer').fadeIn()
+      Ember.$('.event-details').removeClass('no-img')
+      this.set("currentEvent", null)
+      this.toggleProperty('showDetails')
+    },
+    goToArtistPage(artist){
+      this.set("currentEvent", null)
+      Ember.$('.event-details').removeClass('no-img')
+      Ember.$('footer').fadeIn()
+      this.toggleProperty('showDetails')
+      this.attrs.onFinishArtistCleanUp(artist)
+    },
+    goToPresenterPage(presenter){
+      this.set("currentEvent", null)
+      Ember.$('.event-details').removeClass('no-img')
+      Ember.$('footer').fadeIn()
+      this.toggleProperty('showDetails')
+      this.attrs.onFinishPresenterCleanUp(presenter)
+    },
     sortByName() {
       var sorted = this.get('model').sortBy('name');
       this.set('model', sorted);

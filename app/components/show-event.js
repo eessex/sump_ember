@@ -12,22 +12,24 @@ export default Ember.Component.extend({
   }),
   actions: {
     handleAddPresenter(selection){
-     this.get('event').set('presenter', selection)
-     selection.save();
-   },
-   handleAddArtist(artist){
-     this.get('event.artists').pushObject(artist)
-   },
+      this.get('event').set('presenter', selection)
+      selection.save();
+    },
+    handleAddArtist(artist){
+      this.get('event.artists').pushObject(artist)
+    },
     update() {
       this.get('event').save();
       this.get('event').toggleProperty('isEditing');
     },
-    viewMore: function(event){
-      jQuery('.event-details.active').fadeOut();
-      jQuery('li#' + event.id).removeClass('active');
-      jQuery('body').removeClass('active'); 
-      event.toggleProperty('showDetails', false);
-      jQuery('.event-details').removeClass('active'); 
-      },
-  }
+    closeOut(event){
+      this.attrs.onCloseOut(event)
+    },
+    selectArtist(artist){
+      this.attrs.onArtistSelection(artist)
+    },
+    selectPresenter(presenter){
+      this.attrs.onPresenterSelection(presenter)
+    }
+  },
 });

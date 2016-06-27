@@ -5,9 +5,9 @@ export default Ember.Route.extend({
     return this.store.findAll('presenter');
   },
   activate: function(){
-    Ember.$('body').toggleClass("presenter")
+    Ember.$('body').toggleClass("presenters index")
   },
   deactivate: function(){
-    Ember.$('body').toggleClass("presenter")
+    Ember.$('body').toggleClass("presenters index")
   }
 });
