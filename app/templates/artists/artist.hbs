@@ -19,10 +19,12 @@
         </div>
       </div>
       <div class="toggle-it">+</div>
+          </li>
+    <div class="event-details" id="{{event.id}}">
       {{#if event.showDetails}}
         {{show-event event=event}}
       {{/if}}
-    </li>
+    </div>
   {{/each}}
 </ul>
 </div>

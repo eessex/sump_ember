@@ -6,7 +6,7 @@ store: Ember.inject.service(),
      return this.get('presenters').filter((selection) =>{
         let query = this.get('query').toLowerCase();
         return selection.get('name').toLowerCase().includes(query);
-      })
+      });
   }),
   actions: {
     addPresenter(selection){
