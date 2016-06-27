@@ -8,6 +8,14 @@ export default Ember.Controller.extend({
       event.toggleProperty('isEditing');
       console.log(event.isEditing)
     },
+    goToArtistPage(artist){
+      this.set('showDetails', false);
+      this.transitionToRoute("artists.artist", artist);
+    },
+    goToPresenterPage(presenter){
+      this.set('showDetails', false);
+      this.transitionToRoute("presenters.presenter", presenter);
+    }
   },
   showDetails: false
 });

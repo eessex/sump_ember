@@ -23,10 +23,10 @@
       </div>
       <div class="toggle-it">+</div>
     </li>
-    <div class="event-details" id="{{event.id}}">
-      {{#if event.showDetails}}
-        {{show-event event=event}}
-      {{/if}}
-    </div>
   {{/each}}
+  <div class="event-details">
+    {{#if showDetails}}
+      {{show-event event=currentEvent onCloseOut=(action "goToIndexPage") onArtistSelection=(action "goToArtistPage") onPresenterSelection=(action "goToPresenterPage")}}
+    {{/if}}
+  </div>
 </ul>

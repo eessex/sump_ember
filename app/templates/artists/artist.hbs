@@ -1,30 +1,5 @@
 <div class="artist show">
 <h4 class="title"><a href="/artists">Artists</a> : {{model.name}}</h4>
 
-
-<ul class="index">
-  {{#each model.events as |event|}}
-    <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>
-    <div class="header">
-      <div class="date">
-          {{formatDate "MMM DD YYYY @ h.mma" event.date}}
-        </div>
-        <div class="title">
-        {{#if event.presenter}}
-           <span class="presenter">
-            {{event.presenter.name}} Presents:
-          </span>
-        {{/if}}
-          {{event.name}}
-        </div>
-      </div>
-      <div class="toggle-it">+</div>
-          </li>
-    <div class="event-details" id="{{event.id}}">
-      {{#if event.showDetails}}
-        {{show-event event=event}}
-      {{/if}}
-    </div>
-  {{/each}}
-</ul>
+  {{list-events model=model.events onFinishArtistCleanUp=(action 'transitionToArtist') onFinishPresenterCleanUp=(action 'transitionToPresenter')}}
 </div>
