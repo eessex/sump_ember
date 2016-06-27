@@ -21,6 +21,13 @@ export default Ember.Component.extend({
     update() {
       this.get('event').save();
       this.get('event').toggleProperty('isEditing');
-    }
+    },
+    viewMore: function(event){
+      jQuery('.event-details.active').fadeOut();
+      jQuery('li#' + event.id).removeClass('active');
+      jQuery('body').removeClass('active'); 
+      event.toggleProperty('showDetails', false);
+      jQuery('.event-details').removeClass('active'); 
+      },
   }
 });

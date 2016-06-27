@@ -130,9 +130,11 @@ li.reveal .header {
 }
 li.reveal .header div {
   display: inline-block;
+  max-width: 70vw;
 }
 li.reveal .header .date {
   min-width: 220px;
+  vertical-align: top;
 }
 
 li.reveal .header .presenter {
@@ -140,24 +142,23 @@ li.reveal .header .presenter {
   padding-right: 1em;
 }
 
-li.reveal.active {
+.event-details.active {
   position: absolute;
   top: 0;
   background-color: #fff;
-  z-index: 1000;
-  border-top: none;
+  z-index: 100;
+  border-bottom: 1px solid;
   width: 100%;
   min-height: 98vh;
   padding: 0;
-  cursor: default;
 }
-li.reveal.active .event.show {
+.event-details.active .event.show {
   width: 96%;
   padding: 2%;
 }
 
 li.reveal.active .header {
-  color: #fff;
+/*  color: #fff;*/
 /*  opacity: 0;*/
 }
 
@@ -179,15 +180,26 @@ li.reveal:hover .toggle-it {
   opacity: 1;
 }
 
-li.reveal.active .toggle-it {
-  opacity: 1;
+.event-details.active .toggle-it {
+/*  opacity: 1;*/
   transform: rotate(45deg);
-  font-size: 3em;
+  font-size: 3.25em;
   background-color: antiquewhite;
   top: 0;
+  right: 2%;
+  position: fixed;
+  z-index: 1000;
 }
-li.reveal.active .toggle-it:hover {
+.event-details.active .toggle-it:hover {
   color: deeppink;
+}
+.event-details.active .window {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 50%;
+  opacity: .01;
 }
 
 .filters {
@@ -477,3 +489,31 @@ button.add {
  input#new-image {
    color:floralwhite;
  }
+
+ @media screen and (max-width: 1024px) {
+    li.reveal .header .presenter {
+      display: block;
+    }
+      ul.artist-index li, ul.presenter-index li {
+    width: 50%;
+  }
+}
+ @media screen and (max-width: 950px) {
+    li.reveal .header .date {
+      display: block;
+      padding-bottom: .35em;
+    }
+    li.reveal .header .title {
+      font-weight: 700;
+    }
+    li.reveal .header .presenter {
+      font-weight: normal;
+      padding-bottom: .35em;
+    }
+    li.reveal .header div {
+    max-width: 100vw;
+  }
+  .about .map, .about .content {
+    width: 100%;
+  }
+}

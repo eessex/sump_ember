@@ -4,9 +4,9 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
   results: Ember.computed('query', function(){
     return this.get('artists').filter((selection) =>{
-        let query = this.get('query').toLowerCase()
-        return selection.get('name').toLowerCase().includes(query)
-      })
+        let query = this.get('query').toLowerCase();
+        return selection.get('name').toLowerCase().includes(query);
+      });
   }),
   actions: {
     addArtist(selection){
@@ -15,9 +15,9 @@ export default Ember.Component.extend({
     },
     addNewArtist(){
       let store = this.get('store');
-      let newArtistName = this.$('input').val()
+      let newArtistName = this.$('input').val();
       let newArtistObject = store.createRecord('artist');
-      newArtistObject.set('name', newArtistName)
+      newArtistObject.set('name', newArtistName);
       this.attrs.onArtistAdd(newArtistObject);
       this.$('input').val('');
     }
