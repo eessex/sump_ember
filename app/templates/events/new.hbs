@@ -1,27 +1,25 @@
 
-<form>
+<form class="new-event">
 <h2>Add event</h2>
 
-<div>
+<div class="image">
   <label for="new-image">Image</label>
   {{s3-upload id="new-image" onComplete="imageUploadComplete"}}
 </div>
-  <div>
-    <label for="name">Title</label>
-    {{input value=model.name id="name"}}
+  <div class="title">
+    {{input value=model.name id="name" placeholder="Event Title"}}
   </div>
 
-  <div>
+  <div class="date">
     <label for="date">Date</label>
     {{input type="datetime-local" value=model.date id="date"}}
   </div>
 
-  <div>
-    <label for="price">Price</label>
-    {{input value=model.price id="price"}}
+  <div class="price">
+    {{input value=model.price id="price" placeholder="Price"}}
   </div>
 
-  <div>
+  <div class="artists">
     <label for="artist">Artists</label>
     {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
     <div class="selectedArtists">
@@ -33,12 +31,12 @@
     </div>
   </div>
 
-  <div>
+  <div class="description">
     <label for="description">Description</label>
-    {{input value=model.description id="description"}}
+    {{textarea value=model.description id="description" placeholder="Event Description"}}
   </div>
 
-  <div>
+  <div class="presenter">
     <label for="presenter">Presenter</label>
     {{all-presenters presenters=allPresenters onPresenterAdd=(action "handleAddPresenter")}}
 

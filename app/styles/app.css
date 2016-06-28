@@ -64,6 +64,7 @@ header nav a {
 .presenters.index header nav .about {
   display: inline-block;
 }
+
 header nav .about {
   display: none;
 }
@@ -94,8 +95,9 @@ ul {
 }
 
 form {
-  max-width: 800px;
-  margin: 0 auto
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2%;
 }
 
 form div {
@@ -286,7 +288,7 @@ li.reveal:hover .toggle-it {
 }
 
 .presenter.show .info .inner .description {
-  margin-top: 3em;
+  margin-top: 1em;
   font-weight: 700;
   font-size: larger;
   line-height: 1.45em;
@@ -375,8 +377,8 @@ body.about::after {
 /* ARTISTS INDEX */
 h4.title {
   position: absolute;
-  top: 0.275em;
-  left: 12em;
+  top: 5.15em;
+  left: 2%;
   text-decoration: none;
   border-bottom: 2px solid;
   padding-bottom: 0em;
@@ -384,6 +386,13 @@ h4.title {
 h4.title a {
   text-decoration: none;
 }
+
+/*.presenters.index h4.title,
+.artists.index h4.title {
+    position: absolute;
+    top: 5.15em;
+    left: 2%;
+}*/
 
 .artist.show h4.title,
 .presenters.index h4.title {
@@ -395,14 +404,24 @@ h4.title a {
 }
 ul.artist-index,
 ul.presenter-index {
-  display: flex;
-  flex-wrap: wrap;
+  line-height: 2em;
   padding-left: 2%;
   margin-top: 3em;
+  margin-left: 15%;
 }
-ul.artist-index li,
-ul.presenter-index li {
-  width: 24%;
+
+.artist.show ul.index,
+.presenters.index ul.index {
+  margin-top: 6em;
+}
+
+ul.artist-index {
+  column-count: 3;
+}
+
+ul.artist-index li h3,
+ul.presenter-index li h3 {
+  margin-top: 0;
 }
 
 ul.artist-index li a,
@@ -428,15 +447,16 @@ ul.presenter-index li small  {
 /* FORMS */
 
 input {
-  border: 0;
-  border-bottom: 2px solid;
-  background-color: floralwhite;
-  width: 100%;
-  display: block;
-  margin-bottom: 2em;
-  font-size: 1em;
-  font-weight: 400;
-  padding: 1em .5em;
+    border: 0;
+    border-bottom: 2px solid;
+    background-color: floralwhite;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 2em;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 1em .5em;
+    width: 97%;
 }
 
 input#new-image button {
@@ -464,7 +484,8 @@ button {
 
 form label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: .75em;
+  font-weight: 700;
 }
 
 input:-webkit-autofill,
@@ -512,9 +533,8 @@ button.add {
   min-height: 3em;
 }
 .login-form button:hover {
-  background: deeppink;
+  color: deeppink;
   border-color: deeppink;
-  color: black;
 }
 
  input[type="file"]::-webkit-file-upload-button {
@@ -531,12 +551,12 @@ button.add {
  }
 
  @media screen and (max-width: 1024px) {
-    li.reveal .header .presenter {
+/*    li.reveal .header .presenter {
       display: block;
     }
-      ul.artist-index li, ul.presenter-index li {
+    ul.artist-index li, ul.presenter-index li {
     width: 50%;
-  }
+  }*/
 }
 @media screen and (max-width: 950px) {
   li.reveal {
@@ -577,7 +597,7 @@ button.add {
   h4.title {
     position: relative;
     left: 2%;
-    font-size: larger;
+/*    font-size: larger;*/
     margin-bottom: 2em;
     border: none;
   }

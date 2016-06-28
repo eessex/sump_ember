@@ -1,11 +1,9 @@
-<div class="presenter show">
+
 <h4 class="title"><a href="/presenters">Presenters</a> : {{model.name}}</h4>
-{{show-presenter presenter=model}}
-<h4 class="events-list">Events organized by {{model.name}}  <i class="fa fa-sort-desc"></i></h4>
-</div>
 {{list-events model=model.events onFinishArtistCleanUp=(action 'transitionToArtist') onFinishPresenterCleanUp=(action 'transitionToPresenter')}}
-
-
+<div class="presenter show">
+{{show-presenter presenter=model}}
+</div>
 {{#if session.isAuthenticated}}
 <button id='edit' {{action 'edit'}}>Edit</button>
 <button id='delete' {{action 'delete'}}>Delete</button>
