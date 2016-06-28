@@ -576,6 +576,10 @@ button.add {
     padding-bottom: .35em;
     font-size: large;
   }
+.id-5 {
+  display: none;
+ }
+
   li.reveal .header div {
     max-width: 100vw;
   }

@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  didInsertElement : function(){
+    Ember.$('.id-5').hide();
+  },
   showDetails: false,
-
   actions: {
     viewMore: function(event){
       if (event.get('image') == null) {

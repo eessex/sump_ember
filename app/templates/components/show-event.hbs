@@ -68,7 +68,7 @@
     <div class="inner">
       <div class="title">
         {{#if event.presenter}}
-          <h3 class="presenter"><a href="#" {{action "selectPresenter" event.presenter}}>
+          <h3 class="presenter {{event.presenter.id}}"><a href="#" {{action "selectPresenter" event.presenter}}>
             {{event.presenter.name}} Presents:</a>
           </h3>
         {{/if}}
