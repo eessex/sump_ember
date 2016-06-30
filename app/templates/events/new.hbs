@@ -1,51 +1,57 @@
 
 <form class="new-event">
-<h2>Add event</h2>
-
-<div class="image">
-  <label for="new-image">Image</label>
-  {{s3-upload id="new-image" onComplete="imageUploadComplete"}}
-</div>
+<h2>Create a New Event</h2>
   <div class="title">
-    {{input value=model.name id="name" placeholder="Event Title"}}
+    <label for="date">Title:</label>
+    {{input value=model.name id="name"}}
   </div>
 
+<div class="image">
+  <label for="new-image">Image: </label>
+  {{s3-upload id="new-image" onComplete="imageUploadComplete"}}
+</div>
+
   <div class="date">
-    <label for="date">Date</label>
+    <label for="date">Date:</label>
     {{input type="datetime-local" value=model.date id="date"}}
   </div>
 
   <div class="price">
-    {{input value=model.price id="price" placeholder="Price"}}
+    <label for="date">Price:</label>
+    {{input value=model.price id="price"}}
   </div>
+  <div class="presenter">
+    <label for="presenter">Presenter:</label>
+    {{all-presenters presenters=allPresenters onPresenterAdd=(action "handleAddPresenter")}}
 
+    <div class="selectedPresenter">
+      <ul>
+        <li>
+          {{model.presenter.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="artists">
-    <label for="artist">Artists</label>
+    <label for="artist">Artists:</label>
     {{all-artists artists=allArtists onArtistAdd=(action "handleAddArtist")}}
     <div class="selectedArtists">
+      <ul>
       {{#each model.artists as |artist|}}
-        <div class="">
+        <li>
           {{artist.name}}
-        </div>
+        </li>
       {{/each}}
+      </ul>
     </div>
   </div>
 
   <div class="description">
-    <label for="description">Description</label>
-    {{textarea value=model.description id="description" placeholder="Event Description"}}
+    <label for="description">Details: </label>
+    {{textarea value=model.description id="description"}}
   </div>
 
-  <div class="presenter">
-    <label for="presenter">Presenter</label>
-    {{all-presenters presenters=allPresenters onPresenterAdd=(action "handleAddPresenter")}}
 
-    <div class="selectedPresenter">
-        <div class="">
-          {{model.presenter.name}}
-        </div>
-    </div>
-  </div>
 
-  <button {{action 'save'}} id="submit" class="btn save">Save</button>
+  <button {{action 'save'}} id="submit" class="btn save">Publish Event</button>
 </form>
