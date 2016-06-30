@@ -476,10 +476,10 @@ textarea {
 
 button {
   border: 1px solid black;
-  height: 30px;
-  width: 125px;
   background-color: floralwhite;
   display: inline;
+  font-size: 1em;
+  padding: .5em 1em;
 }
 
 form label {
@@ -522,7 +522,7 @@ button.save:hover {
 button.add {
   position: absolute;
   right: 0;
-  top: -2em;
+  top: -.25em;
 }
 
 .login-form button {
@@ -536,18 +536,107 @@ button.add {
   color: deeppink;
   border-color: deeppink;
 }
+.new-event h2 {
+  margin-bottom: 3em;
+}
 
+.new-event form label {
+  width: 100px;
+  display: inline-block;
+  font-size: larger;
+}
+
+.new-event form input {
+  display: inline-block;
+  max-width: 550px;
+  width: 90%;
+  padding: 0.35em 1em;
+}
+
+.new-event form .date,
+.new-event form .price {
+  display: inline-block;
+  max-width: 49%;
+}
+
+.new-event form .price {
+  text-align: right;
+  margin-left: 5%;
+}
+
+.new-event form .date input {
+  max-width: 60%;
+}
+
+.new-event form .price input {
+  max-width: 40%;
+}
+.new-event form .ember-view {
+  display: inline-block;
+  width: 83%;
+}
+.new-event form .ember-view input{
+  width: 65%;
+}
+.new-event ul.results {
+  position: absolute;
+  z-index: 100;
+  background-color: antiquewhite;
+  top: 1.95em;
+  width: 71%;
+}
+.new-event ul.results li {
+  padding: .5em 1em;
+  width: 40%;
+  display: inline-block;
+}
+
+.new-event .selectedArtists,
+.new-event .selectedPresenter {
+  margin-top: -2em;
+}
+.new-event .selectedArtists ul,
+.new-event .selectedPresenter ul {
+  text-align: right;
+  margin-right: 2em;
+}
+
+.new-event .description {
+  margin-top: 2em;
+}
+.new-event .description label {
+  vertical-align: top;
+}
+.new-event .description textarea {
+  border: 1px solid;
+  border-bottom: 2px solid;
+}
+.new-event button:hover {
+  color: deeppink;
+  border-color: deeppink;
+}
+
+.new-event button.save {
+  width: 100%;
+  font-size: 1.15em;
+  padding: 1em;
+}
+.new-event button.save:hover {
+  color: #fff;
+}
  input[type="file"]::-webkit-file-upload-button {
    border: 1px solid black;
-   height: 30px;
-   width: 125px;
+   padding: .5em 1em;
    background-color: floralwhite;
    display: inline;
-   width: 125px;
  }
-
+ input[type="file"]::-webkit-file-upload-button:hover {
+  color: deeppink;
+  border-color: deeppink;
+ }
  input#new-image {
-   color:floralwhite;
+   border-bottom: none;
+   padding-left: 0;
  }
 
  @media screen and (max-width: 1024px) {
