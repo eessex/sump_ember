@@ -575,6 +575,7 @@ button.add {
     font-weight: normal;
     padding-bottom: .35em;
     font-size: large;
+    display: block;
   }
 .id-5 {
   display: none;
