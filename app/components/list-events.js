@@ -4,8 +4,6 @@ export default Ember.Component.extend({
   didInsertElement : function(){
     Ember.$('.id-5').hide();
   },
-  isSorted: false,  // or just 'firstname', or 'firstname:desc'
-//  sortedEvents: Ember.computed.sort('events', 'sortProperties'),
   showDetails: false,
   actions: {
     viewMore: function(event){
@@ -18,6 +16,7 @@ export default Ember.Component.extend({
       Ember.$('header nav#main .fa').hide();
       this.toggleProperty('showDetails');
       Ember.$('.event-details').fadeIn();
+      Ember.$("html, body").animate({ scrollTop: 0 }, 1);
     },
     goToIndexPage(){
       Ember.$('.event-details').fadeOut();

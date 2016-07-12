@@ -233,18 +233,23 @@ li.reveal:hover .toggle-it {
 }
 
 .event-details .toggle-it {
-/*  opacity: 1;*/
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   font-size: 3.25em;
   background-color: antiquewhite;
-  top: 0;
-  right: 2%;
+  top: -.15em;
+  right: .05em;
   position: fixed;
   z-index: 1000;
 }
 .event-details .toggle-it:hover {
   color: deeppink;
+}
+.event-details .toggle-it .fa {
+  font-size: xx-large;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin: .45em .35em;
 }
 .event-details .window {
   position: absolute;
