@@ -1,24 +1,31 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+{{loading}}
 <header>
   <h1 id="logo">{{link-to 'the Sump' 'index'}}</h1>
   <nav id="main">
-    {{link-to 'Artists' 'artists' class="artists"}}
-    {{link-to 'Presenters' 'presenters' class="presenters"}}
-    {{link-to 'Events' 'index' class="events"}}
-    {{link-to 'About' 'about' class="about"}}
+    <ul>
+      <li {{action 'menu'}}>{{link-to 'Events' 'index' class="events"}}</li>
+      <li {{action 'menu'}}>{{link-to 'About' 'about' class="about"}}</li>
+      <li {{action 'menu'}}>{{link-to 'Artists' 'artists' class="artists"}}</li>
+      <li {{action 'menu'}}>{{link-to 'Presenters' 'presenters' class="presenters"}}</li>
+      {{#if session.isAuthenticated}}
+        <li {{action 'menu'}}  class="last"><a href="#" {{action 'invalidateSession'}} class="logout">Logout</a></li>
+      {{else}}
+      <li {{action 'menu'}} class="last"><small>{{link-to 'Log in' 'login'}}</small></li>
+      {{/if}}
+    </ul>
+    <div class="menu-header" {{action 'menu'}}>
+      {{#if menuActive}}
+        <i class="fa fa-times" aria-hidden="true"></i>
+        {{else}}
+        <span class="menu-title">Menu</span><i class="fa fa-bars" aria-hidden="true"></i>
+        {{/if}}
+    </div>
   </nav>
 </header>
 <main>
-
   {{outlet}}
   </main>
   <footer>
-    <small><a href="https://www.google.com/maps/place/1563+Decatur+St,+Ridgewood,+NY+11385/data=!4m2!3m1!1s0x89c25c3adc5a567d:0x3574ef8d136e58c?sa=X&ved=0ahUKEwiktNX6rbjNAhVFyT4KHcfxD8cQ8gEIHTAA" target="_blank">1563 Decatur St, Ridgewood, NY 11385 +</a></small>
-
-    {{#if session.isAuthenticated}}
-      <small><a href="#" {{action 'invalidateSession'}} class="logout">Logout</a></small>
-    {{else}}
-    <a href="/login" class="login">Log in</a>
-    {{/if}}
+    <small><a href="https://www.google.com/maps/place/1563+Decatur+St,+Ridgewood,+NY+11385/data=!4m2!3m1!1s0x89c25c3adc5a567d:0x3574ef8d136e58c?sa=X&ved=0ahUKEwiktNX6rbjNAhVFyT4KHcfxD8cQ8gEIHTAA" target="_blank">the Sump: 1563 Decatur St, Ridgewood, NY 11385 +</a></small>
   </footer>
-
