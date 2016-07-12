@@ -1,5 +1,5 @@
-<form class="new-event">
 {{#if session.isAuthenticated}}
+<form class="new-event">
 <h2>Create a New Event</h2>
   <div class="title">
     <label for="date">Title:</label>
@@ -50,8 +50,9 @@
     <label for="description">Details: </label>
     {{textarea value=model.description id="description"}}
   </div>
+
+
+
   <button {{action 'save'}} id="submit" class="btn save">Publish Event</button>
-{{else}}
-<h2>You are not authorized to access this page.</h2>
-{{/if}}
 </form>
+{{/if}}

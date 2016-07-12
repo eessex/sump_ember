@@ -4,6 +4,7 @@ export default Ember.Component.extend({
 store: Ember.inject.service(),
   results: Ember.computed('query', function(){
      return this.get('presenters').filter((selection) =>{
+        this.$('ul.results').slideDown();
         let query = this.get('query').toLowerCase();
         return selection.get('name').toLowerCase().includes(query);
       });
@@ -12,6 +13,7 @@ store: Ember.inject.service(),
     addPresenter(selection){
       this.attrs.onPresenterAdd(selection);
       this.$('input').val('');
+      this.$('ul.results').slideUp();
     },
     addNewPresenter() {
       let store = this.get('store');

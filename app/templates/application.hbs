@@ -9,6 +9,7 @@
       <li {{action 'menu'}}>{{link-to 'Artists' 'artists' class="artists"}}</li>
       <li {{action 'menu'}}>{{link-to 'Presenters' 'presenters' class="presenters"}}</li>
       {{#if session.isAuthenticated}}
+        <li {{action 'menu'}}><i class="fa fa-plus"></i>{{link-to 'New' 'events.new' class="events"}}</li>
         <li {{action 'menu'}}  class="last"><a href="#" {{action 'invalidateSession'}} class="logout">Logout</a></li>
       {{else}}
       <li {{action 'menu'}} class="last"><small>{{link-to 'Log in' 'login'}}</small></li>
