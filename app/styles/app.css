@@ -80,11 +80,15 @@ header nav#main .menu-header:hover {
 header nav#main .menu-title {
   margin-right: 1.25em;
 }
-header nav#main .fa {
+header nav#main .fa-times,
+header nav#main .fa-bars {
   z-index: 200;
   position: absolute;
   right: 2%;
   top: 1.75em;
+}
+header nav#main .fa-plus {
+  font-size: small;
 }
 header nav a {
   /*margin-left: 1em;*/
@@ -515,7 +519,7 @@ textarea {
   border-bottom: 2px solid black;
   background-color: floralwhite;
   height: 100px;
-  width: 100%
+  width: 80% !important;
   display: block;
   padding: 0;
   margin: 0;
@@ -523,7 +527,7 @@ textarea {
 
 button {
   border: 1px solid black;
-  background-color: floralwhite;
+  background-color: antiquewhite;
   display: inline;
   font-size: 1em;
   padding: .5em 1em;
@@ -539,7 +543,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
-    background-color: rgba(255,255,255,.5) !important;
+    background-color: floralwhite !important; /*rgba(255,255,255,0) */
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
     }
 
@@ -557,7 +561,7 @@ button.save {
   width: 125px;
   background: black;
   color: white;
-
+  margin-bottom: 1em;
 }
 
 button.save:hover {
@@ -576,12 +580,12 @@ button.add {
   font-weight: 400;
   padding: .75em 2em;
   font-size: 1em;
-  background-color: #fff;
   min-height: 3em;
 }
 .login-form button:hover {
   color: deeppink;
   border-color: deeppink;
+  cursor: pointer;
 }
 .new-event h2 {
   margin-bottom: 3em;
@@ -637,6 +641,10 @@ button.add {
   width: 40%;
   display: inline-block;
 }
+ul.results li:hover {
+  cursor: pointer;
+  color: deeppink;
+}
 
 .new-event .selectedArtists,
 .new-event .selectedPresenter {
@@ -645,9 +653,16 @@ button.add {
 .new-event .selectedArtists ul,
 .new-event .selectedPresenter ul {
   text-align: right;
-  margin-right: 2em;
+  margin-right: 1em;
+  font-size: smaller;
+  padding-top: 1em;
 }
 
+.new-event .selectedArtists li:hover,
+.new-event .selectedPresenter li:hover {
+  color: deeppink;
+  cursor: pointer;
+}
 .new-event .description {
   margin-top: 2em;
 }
@@ -657,6 +672,9 @@ button.add {
 .new-event .description textarea {
   border: 1px solid;
   border-bottom: 2px solid;
+  font-size: 1em;
+  line-height: 1.45em;
+  padding: 1%;
 }
 .new-event button:hover {
   color: deeppink;
@@ -674,8 +692,9 @@ button.add {
  input[type="file"]::-webkit-file-upload-button {
    border: 1px solid black;
    padding: .5em 1em;
-   background-color: floralwhite;
+   background-color: antiquewhite;
    display: inline;
+   margin-right: .5em;
  }
  input[type="file"]::-webkit-file-upload-button:hover {
   color: deeppink;
