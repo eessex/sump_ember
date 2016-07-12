@@ -4,9 +4,9 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   actions: {
     edit() {
-      let event = this.get('model')
+      let event = this.get('model');
       event.toggleProperty('isEditing');
-      console.log(event.isEditing)
+      console.log(event.isEditing);
     },
     goToArtistPage(artist){
       this.set('showDetails', false);

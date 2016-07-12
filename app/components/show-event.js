@@ -12,24 +12,24 @@ export default Ember.Component.extend({
   }),
   actions: {
     handleAddPresenter(selection){
-      this.get('event').set('presenter', selection)
+      this.get('event').set('presenter', selection);
       selection.save();
     },
     handleAddArtist(artist){
-      this.get('event.artists').pushObject(artist)
+      this.get('event.artists').pushObject(artist);
     },
     update() {
       this.get('event').save();
       this.get('event').toggleProperty('isEditing');
     },
     closeOut(event){
-      this.attrs.onCloseOut(event)
+      this.attrs.onCloseOut(event);
     },
     selectArtist(artist){
-      this.attrs.onArtistSelection(artist)
+      this.attrs.onArtistSelection(artist);
     },
     selectPresenter(presenter){
-      this.attrs.onPresenterSelection(presenter)
+      this.attrs.onPresenterSelection(presenter);
     }
   },
 });

@@ -4,8 +4,7 @@ export default Ember.Controller.extend({
  session: Ember.inject.service(),
  actions: {
    authenticate: function(credentials) {
-     var credentials = credentials,
-     authenticator = 'authenticator:jwt'
+     var authenticator = 'authenticator:jwt';
      this.get('session').authenticate(authenticator, credentials).catch((reason)=>{
        this.set('errorMessage', reason.responseJSON.errors || reason);
      }).then(()=>{

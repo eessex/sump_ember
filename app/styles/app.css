@@ -16,6 +16,11 @@ a {
 a:hover {
   color: deeppink;
 }
+.loading-pane {
+  padding-left: 2%;
+  margin-top: 3em;
+}
+
 header {
   padding: 0 2%;
   margin-bottom: 1em;
@@ -34,6 +39,7 @@ h1.reveal {
   top: -0.175em;
   background-color: antiquewhite;
   z-index: 2000;
+  left: 2%;
 }
 h1.reveal a:hover {
   color: deeppink;
@@ -47,10 +53,43 @@ header nav {
   padding-top: .65em;
   font-weight: 700;
 }
-header nav a {
-  margin-left: 1em;
+header nav#main ul {
+  padding: 1em 2em;
+  position: absolute;
+  top: .5em;
+  right: 0.5em;
+  background: antiquewhite;
+  z-index: 100;
+  line-height: 1.35em;
+  font-weight: 300;
+  display: none;
 }
-.events.index header nav .events,
+header nav#main li {
+  font-size: 1.25em;
+  margin-bottom: .5em;
+}
+header nav#main li.last {
+  font-size: small;
+  margin-bottom: 0;
+  opacity: .65;
+}
+header nav#main .menu-header:hover {
+  color: deeppink;
+  cursor: pointer;
+}
+header nav#main .menu-title {
+  margin-right: 1.25em;
+}
+header nav#main .fa {
+  z-index: 200;
+  position: absolute;
+  right: 2%;
+  top: 1.75em;
+}
+header nav a {
+  /*margin-left: 1em;*/
+}
+/*.events.index header nav .events,
 .events.index header nav .artists,
 .artists.index header nav .artists,
 .events.index header nav .presenters,
@@ -63,11 +102,11 @@ header nav a {
 .artists.index header nav .about,
 .presenters.index header nav .about {
   display: inline-block;
-}
+}*/
 
-header nav .about {
+/*header nav .about {
   display: none;
-}
+}*/
 footer {
   padding: 2%;
   position: relative;
@@ -157,16 +196,17 @@ li.reveal .header .presenter {
 .index .event-details .ember-view {
   position: absolute;
   top: 0;
-  background-color: #fff;
   z-index: 100;
   border-bottom: 1px solid;
   width: 100%;
-  min-height: 98vh;
   padding: 0;
 }
 .index .event-details .event.show {
-  width: 96%;
+  width: 95.5%;
   padding: 2%;
+  background-color: #fff;
+  margin: .25em auto;
+    min-height: 98vh;
 }
 
 li.reveal.active .header {
@@ -195,6 +235,7 @@ li.reveal:hover .toggle-it {
 .event-details .toggle-it {
 /*  opacity: 1;*/
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   font-size: 3.25em;
   background-color: antiquewhite;
   top: 0;
@@ -220,7 +261,7 @@ li.reveal:hover .toggle-it {
 .filters {
   display: inline-block;
   position: absolute;
-  right: 7em;
+  right: 8em;
   top: 1.55em;
 }
 .filters h4 {
@@ -298,7 +339,7 @@ li.reveal:hover .toggle-it {
   font-size: inherit;
 }
 .show h4.events-list {
-  margin-left: 2%; 
+  margin-left: 2%;
 }
 .show h4.events-list i {
   vertical-align: text-top;
@@ -327,11 +368,11 @@ li.reveal:hover .toggle-it {
 }
 /*ABOUT PAGE */
 body.about header {
-  z-index: 2000;
+  /*z-index: 2000;
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: 0;*/
 }
 .about h5.fb a {
   text-decoration: none;
@@ -366,6 +407,7 @@ body.about::after {
   font-size: xx-large;
   line-height: 1.45em;
   margin-right: 1em;
+  margin-top: 0;
 }
 .about .content .inner .links a {
   text-decoration: none;
@@ -676,9 +718,9 @@ button.add {
   .about .map, .about .content {
     width: 100%;
   }
-  .event.show .image, 
+  .event.show .image,
   .presenter.show .image,
-  .event.show .info, 
+  .event.show .info,
   .presenter.show .info {
     width: 100%;
     max-width: 700px;
@@ -688,6 +730,9 @@ button.add {
 }
 
 @media screen and (max-width: 680px) {
+  .filters {
+    display: none;
+  }
   h4.title {
     position: relative;
     left: 2%;
