@@ -763,6 +763,11 @@ ul.results li:hover {
     font-size: large;
     display: block;
   }
+  .upcoming li.reveal {
+    min-width: 96%;
+    margin-top: 1em;
+    padding: 1em 2%;
+  }
 .id-5 {
   display: none;
  }
@@ -785,15 +790,24 @@ ul.results li:hover {
 }
 
 @media screen and (max-width: 680px) {
+  .upcoming ul.index {
+    margin-left: 0;
+  }
+  .upcoming li.reveal .header .date {
+    font-size: initial;
+  }
   .filters {
     display: none;
   }
   h4.title {
+    max-width: 98%;
     position: relative;
     left: 2%;
 /*    font-size: larger;*/
     margin-bottom: 2em;
     border: none;
+    top: inherit;
+    margin-top: 2em;
   }
   .event-details .window {
     display: none;
