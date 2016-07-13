@@ -4,8 +4,6 @@
   <a href="#" {{action "sortByDate"}} class="date">Date {{fa-icon "sort-desc"}}</a>
   <a href="#" {{action "sortByPresenter"}} class="name">Presenter {{fa-icon "sort-desc"}}</a>
 </div> -->
-  <h4 class="title">Upcoming</h4>
-
 <ul class="index">
   {{#each model as |event|}}
     <li class="reveal" id="{{event.id}}" {{action 'viewMore' event}}>

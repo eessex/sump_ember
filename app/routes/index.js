@@ -4,9 +4,9 @@ export default Ember.Route.extend( {
     return this.store.findAll('event');
   },
   activate: function(){
-    Ember.$('body').toggleClass("events index")
+    Ember.$('body').toggleClass("events index home")
   },
   deactivate: function(){
-    Ember.$('body').toggleClass("events index")
+    Ember.$('body').toggleClass("events index home")
   }
 })

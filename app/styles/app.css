@@ -186,10 +186,10 @@ li.reveal .header {
 .events.index h4.title {
   display: none;
 }
-.events.index .upcoming h4.title {
+.events.index.home .upcoming h4.title {
   display: block;
 }
-.upcoming ul {
+.upcoming ul.index {
   border: none;
   font-size: xx-large;
   margin-left: 230px;
