@@ -1,9 +1,10 @@
 {{yield}}
 
-<div class="filters">
+<!-- <div class="filters">
   <a href="#" {{action "sortByDate"}} class="date">Date {{fa-icon "sort-desc"}}</a>
   <a href="#" {{action "sortByPresenter"}} class="name">Presenter {{fa-icon "sort-desc"}}</a>
-</div>
+</div> -->
+  <h4 class="title">Upcoming</h4>
 
 <ul class="index">
   {{#each model as |event|}}
@@ -24,9 +25,9 @@
       <div class="toggle-it">+</div>
     </li>
   {{/each}}
+  </ul>
   <div class="event-details">
     {{#if showDetails}}
       {{show-event event=currentEvent onCloseOut=(action "goToIndexPage") onArtistSelection=(action "goToArtistPage") onPresenterSelection=(action "goToPresenterPage")}}
     {{/if}}
   </div>
-</ul>

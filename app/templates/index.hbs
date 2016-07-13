@@ -1,1 +1,7 @@
-{{list-events model=model onFinishArtistCleanUp=(action 'transitionToArtist') onFinishPresenterCleanUp=(action 'transitionToPresenter')}}
+<div class="upcoming">
+  {{list-events model=upcoming onFinishArtistCleanUp=(action 'transitionToArtist') onFinishPresenterCleanUp=(action 'transitionToPresenter')}}
+</div>
+
+<div class="past">
+    {{list-events model=past onFinishArtistCleanUp=(action 'transitionToArtist') onFinishPresenterCleanUp=(action 'transitionToPresenter')}}
+</div>

@@ -183,6 +183,37 @@ li.reveal .header {
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
+.events.index h4.title {
+  display: none;
+}
+.events.index .upcoming h4.title {
+  display: block;
+}
+.upcoming ul {
+  border: none;
+  font-size: xx-large;
+  margin-left: 230px;
+  margin-top: -1em;
+}
+.upcoming li.reveal {
+  max-width: 46%;
+  border: none;
+  display: inline-block;
+  margin: 1em 0;
+}
+.upcoming li.reveal .date {
+      font-size: smaller;
+      margin-bottom: .25em;
+}
+.upcoming li.reveal .header div,
+.upcoming li.reveal .header .presenter {
+  display: block;
+}
+.upcoming li.reveal .toggle-it {
+  font-size: 1.25em;
+  right: .45em;
+}
+
 li.reveal .header div {
   display: inline-block;
   max-width: 70vw;
